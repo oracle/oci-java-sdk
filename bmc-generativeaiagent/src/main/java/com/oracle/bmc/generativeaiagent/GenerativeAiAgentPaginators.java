@@ -605,6 +605,115 @@ public class GenerativeAiAgentPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listTools operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListToolsResponse> listToolsResponseIterator(final ListToolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListToolsRequest.Builder, ListToolsRequest, ListToolsResponse>(
+                new java.util.function.Supplier<ListToolsRequest.Builder>() {
+                    @Override
+                    public ListToolsRequest.Builder get() {
+                        return ListToolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListToolsResponse, String>() {
+                    @Override
+                    public String apply(ListToolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListToolsRequest.Builder>,
+                        ListToolsRequest>() {
+                    @Override
+                    public ListToolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListToolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListToolsRequest, ListToolsResponse>() {
+                    @Override
+                    public ListToolsResponse apply(ListToolsRequest request) {
+                        return client.listTools(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.generativeaiagent.model.ToolSummary} objects
+     * contained in responses from the listTools operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.generativeaiagent.model.ToolSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeaiagent.model.ToolSummary> listToolsRecordIterator(
+            final ListToolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListToolsRequest.Builder, ListToolsRequest, ListToolsResponse,
+                com.oracle.bmc.generativeaiagent.model.ToolSummary>(
+                new java.util.function.Supplier<ListToolsRequest.Builder>() {
+                    @Override
+                    public ListToolsRequest.Builder get() {
+                        return ListToolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListToolsResponse, String>() {
+                    @Override
+                    public String apply(ListToolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListToolsRequest.Builder>,
+                        ListToolsRequest>() {
+                    @Override
+                    public ListToolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListToolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListToolsRequest, ListToolsResponse>() {
+                    @Override
+                    public ListToolsResponse apply(ListToolsRequest request) {
+                        return client.listTools(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListToolsResponse,
+                        java.util.List<com.oracle.bmc.generativeaiagent.model.ToolSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeaiagent.model.ToolSummary> apply(
+                            ListToolsResponse response) {
+                        return response.getToolCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
      * will fetch more data from the server as needed.
      *

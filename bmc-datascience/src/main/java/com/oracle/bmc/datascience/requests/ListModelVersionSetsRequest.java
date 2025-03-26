@@ -24,6 +24,56 @@ public class ListModelVersionSetsRequest
         return compartmentId;
     }
     /**
+     * Specifies the type of model version sets to list. By default, user model version sets are listed.
+     *
+     */
+    private Category category;
+
+    /**
+     * Specifies the type of model version sets to list. By default, user model version sets are listed.
+     *
+     **/
+    public enum Category {
+        User("USER"),
+        Service("SERVICE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Category> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Category v : Category.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Category(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Category create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Category: " + key);
+        }
+    };
+
+    /**
+     * Specifies the type of model version sets to list. By default, user model version sets are listed.
+     *
+     */
+    public Category getCategory() {
+        return category;
+    }
+    /**
      * <b>Filter</b> results by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      *
      */
@@ -267,6 +317,23 @@ public class ListModelVersionSetsRequest
         }
 
         /**
+         * Specifies the type of model version sets to list. By default, user model version sets are listed.
+         *
+         */
+        private Category category = null;
+
+        /**
+         * Specifies the type of model version sets to list. By default, user model version sets are listed.
+         *
+         * @param category the value to set
+         * @return this builder instance
+         */
+        public Builder category(Category category) {
+            this.category = category;
+            return this;
+        }
+
+        /**
          * <b>Filter</b> results by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
          *
          */
@@ -481,6 +548,7 @@ public class ListModelVersionSetsRequest
          */
         public Builder copy(ListModelVersionSetsRequest o) {
             compartmentId(o.getCompartmentId());
+            category(o.getCategory());
             id(o.getId());
             projectId(o.getProjectId());
             name(o.getName());
@@ -524,6 +592,7 @@ public class ListModelVersionSetsRequest
         public ListModelVersionSetsRequest buildWithoutInvocationCallback() {
             ListModelVersionSetsRequest request = new ListModelVersionSetsRequest();
             request.compartmentId = compartmentId;
+            request.category = category;
             request.id = id;
             request.projectId = projectId;
             request.name = name;
@@ -535,7 +604,7 @@ public class ListModelVersionSetsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListModelVersionSetsRequest(compartmentId, id, projectId, name, lifecycleState, createdBy, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListModelVersionSetsRequest(compartmentId, category, id, projectId, name, lifecycleState, createdBy, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -546,6 +615,7 @@ public class ListModelVersionSetsRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .category(category)
                 .id(id)
                 .projectId(projectId)
                 .name(name)
@@ -572,6 +642,7 @@ public class ListModelVersionSetsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",category=").append(String.valueOf(this.category));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",projectId=").append(String.valueOf(this.projectId));
         sb.append(",name=").append(String.valueOf(this.name));
@@ -598,6 +669,7 @@ public class ListModelVersionSetsRequest
         ListModelVersionSetsRequest other = (ListModelVersionSetsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.name, other.name)
@@ -617,6 +689,7 @@ public class ListModelVersionSetsRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());

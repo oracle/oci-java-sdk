@@ -31,7 +31,7 @@ public class GenerativeAiAgentRuntimeAsyncClient implements GenerativeAiAgentRun
                     .serviceName("GENERATIVEAIAGENTRUNTIME")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://genai-agent-service.{region}.oci.{secondLevelDomain}")
+                            "https://agent-runtime.generativeai.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -629,6 +629,58 @@ public class GenerativeAiAgentRuntimeAsyncClient implements GenerativeAiAgentRun
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetSessionRequest, GetSessionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveMetadataResponse> retrieveMetadata(
+            RetrieveMetadataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveMetadataRequest, RetrieveMetadataResponse>
+                    handler) {
+        LOG.trace("Called async retrieveMetadata");
+        final RetrieveMetadataRequest interceptedRequest =
+                RetrieveMetadataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetrieveMetadataConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgentRuntime",
+                        "RetrieveMetadata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents-client/20240531/KnowledgeBaseMetadataSummary/RetrieveMetadata");
+        final java.util.function.Function<javax.ws.rs.core.Response, RetrieveMetadataResponse>
+                transformer =
+                        RetrieveMetadataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RetrieveMetadataRequest, RetrieveMetadataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RetrieveMetadataRequest, RetrieveMetadataResponse>,
+                        java.util.concurrent.Future<RetrieveMetadataResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRetrieveMetadataDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RetrieveMetadataRequest, RetrieveMetadataResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

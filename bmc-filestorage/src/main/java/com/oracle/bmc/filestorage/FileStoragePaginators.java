@@ -717,6 +717,116 @@ public class FileStoragePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listQuotaRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListQuotaRulesResponse> listQuotaRulesResponseIterator(
+            final ListQuotaRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListQuotaRulesRequest.Builder, ListQuotaRulesRequest, ListQuotaRulesResponse>(
+                new java.util.function.Supplier<ListQuotaRulesRequest.Builder>() {
+                    @Override
+                    public ListQuotaRulesRequest.Builder get() {
+                        return ListQuotaRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListQuotaRulesResponse, String>() {
+                    @Override
+                    public String apply(ListQuotaRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListQuotaRulesRequest.Builder>,
+                        ListQuotaRulesRequest>() {
+                    @Override
+                    public ListQuotaRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListQuotaRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListQuotaRulesRequest, ListQuotaRulesResponse>() {
+                    @Override
+                    public ListQuotaRulesResponse apply(ListQuotaRulesRequest request) {
+                        return client.listQuotaRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.QuotaRuleSummary} objects
+     * contained in responses from the listQuotaRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.QuotaRuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.filestorage.model.QuotaRuleSummary> listQuotaRulesRecordIterator(
+            final ListQuotaRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListQuotaRulesRequest.Builder, ListQuotaRulesRequest, ListQuotaRulesResponse,
+                com.oracle.bmc.filestorage.model.QuotaRuleSummary>(
+                new java.util.function.Supplier<ListQuotaRulesRequest.Builder>() {
+                    @Override
+                    public ListQuotaRulesRequest.Builder get() {
+                        return ListQuotaRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListQuotaRulesResponse, String>() {
+                    @Override
+                    public String apply(ListQuotaRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListQuotaRulesRequest.Builder>,
+                        ListQuotaRulesRequest>() {
+                    @Override
+                    public ListQuotaRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListQuotaRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListQuotaRulesRequest, ListQuotaRulesResponse>() {
+                    @Override
+                    public ListQuotaRulesResponse apply(ListQuotaRulesRequest request) {
+                        return client.listQuotaRules(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListQuotaRulesResponse,
+                        java.util.List<com.oracle.bmc.filestorage.model.QuotaRuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.filestorage.model.QuotaRuleSummary> apply(
+                            ListQuotaRulesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listReplicationTargets operation. This iterable
      * will fetch more data from the server as needed.
      *

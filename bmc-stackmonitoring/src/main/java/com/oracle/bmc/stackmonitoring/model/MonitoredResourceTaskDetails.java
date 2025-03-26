@@ -25,6 +25,14 @@ package com.oracle.bmc.stackmonitoring.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ImportOciTelemetryResourcesTaskDetails.class,
         name = "IMPORT_OCI_TELEMETRY_RESOURCES"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateAgentReceiverTaskDetails.class,
+        name = "UPDATE_AGENT_RECEIVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateResourceTypeConfigTaskDetails.class,
+        name = "UPDATE_RESOURCE_TYPE_CONFIGS"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -80,6 +88,8 @@ public class MonitoredResourceTaskDetails
      **/
     public enum Type {
         ImportOciTelemetryResources("IMPORT_OCI_TELEMETRY_RESOURCES"),
+        UpdateAgentReceiver("UPDATE_AGENT_RECEIVER"),
+        UpdateResourceTypeConfigs("UPDATE_RESOURCE_TYPE_CONFIGS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

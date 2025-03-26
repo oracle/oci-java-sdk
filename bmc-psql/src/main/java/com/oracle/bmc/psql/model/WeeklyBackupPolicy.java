@@ -35,6 +35,15 @@ public final class WeeklyBackupPolicy extends BackupPolicy {
             this.__explicitlySet__.add("retentionDays");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("copyPolicy")
+        private BackupCopyPolicy copyPolicy;
+
+        public Builder copyPolicy(BackupCopyPolicy copyPolicy) {
+            this.copyPolicy = copyPolicy;
+            this.__explicitlySet__.add("copyPolicy");
+            return this;
+        }
         /**
          * The day of the week that the backup starts.
          **/
@@ -74,7 +83,10 @@ public final class WeeklyBackupPolicy extends BackupPolicy {
         public WeeklyBackupPolicy build() {
             WeeklyBackupPolicy model =
                     new WeeklyBackupPolicy(
-                            this.retentionDays, this.daysOfTheWeek, this.backupStart);
+                            this.retentionDays,
+                            this.copyPolicy,
+                            this.daysOfTheWeek,
+                            this.backupStart);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +97,9 @@ public final class WeeklyBackupPolicy extends BackupPolicy {
         public Builder copy(WeeklyBackupPolicy model) {
             if (model.wasPropertyExplicitlySet("retentionDays")) {
                 this.retentionDays(model.getRetentionDays());
+            }
+            if (model.wasPropertyExplicitlySet("copyPolicy")) {
+                this.copyPolicy(model.getCopyPolicy());
             }
             if (model.wasPropertyExplicitlySet("daysOfTheWeek")) {
                 this.daysOfTheWeek(model.getDaysOfTheWeek());
@@ -110,9 +125,10 @@ public final class WeeklyBackupPolicy extends BackupPolicy {
     @Deprecated
     public WeeklyBackupPolicy(
             Integer retentionDays,
+            BackupCopyPolicy copyPolicy,
             java.util.List<DaysOfTheWeek> daysOfTheWeek,
             String backupStart) {
-        super(retentionDays);
+        super(retentionDays, copyPolicy);
         this.daysOfTheWeek = daysOfTheWeek;
         this.backupStart = backupStart;
     }

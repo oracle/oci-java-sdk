@@ -19,11 +19,12 @@ package com.oracle.bmc.psql.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DbSystemDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"systemType", "dbVersion"})
-    public DbSystemDetails(DbSystem.SystemType systemType, String dbVersion) {
+    @java.beans.ConstructorProperties({"systemType", "dbVersion", "configId"})
+    public DbSystemDetails(DbSystem.SystemType systemType, String dbVersion, String configId) {
         super();
         this.systemType = systemType;
         this.dbVersion = dbVersion;
+        this.configId = configId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +61,29 @@ public final class DbSystemDetails extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
+        /**
+         * OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("configId")
+        private String configId;
+
+        /**
+         * OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+         * @param configId the value to set
+         * @return this builder
+         **/
+        public Builder configId(String configId) {
+            this.configId = configId;
+            this.__explicitlySet__.add("configId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemDetails build() {
-            DbSystemDetails model = new DbSystemDetails(this.systemType, this.dbVersion);
+            DbSystemDetails model =
+                    new DbSystemDetails(this.systemType, this.dbVersion, this.configId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +97,9 @@ public final class DbSystemDetails extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("dbVersion")) {
                 this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("configId")) {
+                this.configId(model.getConfigId());
             }
             return this;
         }
@@ -123,6 +144,20 @@ public final class DbSystemDetails extends com.oracle.bmc.http.internal.Explicit
         return dbVersion;
     }
 
+    /**
+     * OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("configId")
+    private final String configId;
+
+    /**
+     * OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * @return the value
+     **/
+    public String getConfigId() {
+        return configId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +174,7 @@ public final class DbSystemDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append("super=").append(super.toString());
         sb.append("systemType=").append(String.valueOf(this.systemType));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", configId=").append(String.valueOf(this.configId));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +191,7 @@ public final class DbSystemDetails extends com.oracle.bmc.http.internal.Explicit
         DbSystemDetails other = (DbSystemDetails) o;
         return java.util.Objects.equals(this.systemType, other.systemType)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.configId, other.configId)
                 && super.equals(other);
     }
 
@@ -164,6 +201,7 @@ public final class DbSystemDetails extends com.oracle.bmc.http.internal.Explicit
         int result = 1;
         result = (result * PRIME) + (this.systemType == null ? 43 : this.systemType.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result = (result * PRIME) + (this.configId == null ? 43 : this.configId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

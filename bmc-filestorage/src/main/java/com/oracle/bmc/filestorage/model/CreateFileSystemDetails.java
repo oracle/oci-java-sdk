@@ -32,7 +32,8 @@ public final class CreateFileSystemDetails
         "kmsKeyId",
         "sourceSnapshotId",
         "cloneAttachStatus",
-        "filesystemSnapshotPolicyId"
+        "filesystemSnapshotPolicyId",
+        "areQuotaRulesEnabled"
     })
     public CreateFileSystemDetails(
             String availabilityDomain,
@@ -44,7 +45,8 @@ public final class CreateFileSystemDetails
             String kmsKeyId,
             String sourceSnapshotId,
             CloneAttachStatus cloneAttachStatus,
-            String filesystemSnapshotPolicyId) {
+            String filesystemSnapshotPolicyId,
+            Boolean areQuotaRulesEnabled) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -56,6 +58,7 @@ public final class CreateFileSystemDetails
         this.sourceSnapshotId = sourceSnapshotId;
         this.cloneAttachStatus = cloneAttachStatus;
         this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+        this.areQuotaRulesEnabled = areQuotaRulesEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -269,6 +272,22 @@ public final class CreateFileSystemDetails
             this.__explicitlySet__.add("filesystemSnapshotPolicyId");
             return this;
         }
+        /**
+         * Specifies the enforcement of quota rules on the file system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("areQuotaRulesEnabled")
+        private Boolean areQuotaRulesEnabled;
+
+        /**
+         * Specifies the enforcement of quota rules on the file system.
+         * @param areQuotaRulesEnabled the value to set
+         * @return this builder
+         **/
+        public Builder areQuotaRulesEnabled(Boolean areQuotaRulesEnabled) {
+            this.areQuotaRulesEnabled = areQuotaRulesEnabled;
+            this.__explicitlySet__.add("areQuotaRulesEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -285,7 +304,8 @@ public final class CreateFileSystemDetails
                             this.kmsKeyId,
                             this.sourceSnapshotId,
                             this.cloneAttachStatus,
-                            this.filesystemSnapshotPolicyId);
+                            this.filesystemSnapshotPolicyId,
+                            this.areQuotaRulesEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -323,6 +343,9 @@ public final class CreateFileSystemDetails
             }
             if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
                 this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("areQuotaRulesEnabled")) {
+                this.areQuotaRulesEnabled(model.getAreQuotaRulesEnabled());
             }
             return this;
         }
@@ -565,6 +588,20 @@ public final class CreateFileSystemDetails
         return filesystemSnapshotPolicyId;
     }
 
+    /**
+     * Specifies the enforcement of quota rules on the file system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("areQuotaRulesEnabled")
+    private final Boolean areQuotaRulesEnabled;
+
+    /**
+     * Specifies the enforcement of quota rules on the file system.
+     * @return the value
+     **/
+    public Boolean getAreQuotaRulesEnabled() {
+        return areQuotaRulesEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -590,6 +627,7 @@ public final class CreateFileSystemDetails
         sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
         sb.append(", filesystemSnapshotPolicyId=")
                 .append(String.valueOf(this.filesystemSnapshotPolicyId));
+        sb.append(", areQuotaRulesEnabled=").append(String.valueOf(this.areQuotaRulesEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -615,6 +653,7 @@ public final class CreateFileSystemDetails
                 && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
                 && java.util.Objects.equals(
                         this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
+                && java.util.Objects.equals(this.areQuotaRulesEnabled, other.areQuotaRulesEnabled)
                 && super.equals(other);
     }
 
@@ -646,6 +685,11 @@ public final class CreateFileSystemDetails
                         + (this.filesystemSnapshotPolicyId == null
                                 ? 43
                                 : this.filesystemSnapshotPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areQuotaRulesEnabled == null
+                                ? 43
+                                : this.areQuotaRulesEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

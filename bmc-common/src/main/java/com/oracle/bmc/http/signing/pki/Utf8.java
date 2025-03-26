@@ -8,6 +8,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
+import java.nio.Buffer;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
@@ -51,11 +52,15 @@ interface Utf8 extends CharSequence, Sensitive {
                                         if (bytesRead == -1) {
                                             break; // End of stream
                                         }
-                                        buffer.flip();
+                                        // cast is necessary to avoid NoSuchMethodError in Java 8
+                                        // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
+                                        ((Buffer) buffer).flip();
                                         while (buffer.hasRemaining()) {
                                             sink.write(buffer); // Write to the sink channel
                                         }
-                                        buffer.clear();
+                                        // cast is necessary to avoid NoSuchMethodError in Java 8
+                                        // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
+                                        ((Buffer) buffer).clear();
                                     }
                                 } catch (IOException e) {
                                     throw new RuntimeException(
@@ -66,7 +71,9 @@ interface Utf8 extends CharSequence, Sensitive {
             // Wait for the task to complete
             readTask.join();
 
-            buffer.flip();
+            // cast is necessary to avoid NoSuchMethodError in Java 8
+            // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
+            ((Buffer) buffer).flip();
             while (buffer.hasRemaining()) {
                 sink.write(buffer);
             }
@@ -248,7 +255,9 @@ interface Utf8 extends CharSequence, Sensitive {
             final CharBuffer copy = CharBuffer.allocate(existing.remaining());
             final CharBuffer temp = existing.asReadOnlyBuffer();
             copy.put(temp);
-            copy.flip();
+            // cast is necessary to avoid NoSuchMethodError in Java 8
+            // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
+            ((Buffer) copy).flip();
             return copy;
         }
 
@@ -266,7 +275,9 @@ interface Utf8 extends CharSequence, Sensitive {
                     modified.put(c);
                 }
             }
-            modified.flip();
+            // cast is necessary to avoid NoSuchMethodError in Java 8
+            // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
+            ((Buffer) modified).flip();
             return new Chars(modified);
         }
 

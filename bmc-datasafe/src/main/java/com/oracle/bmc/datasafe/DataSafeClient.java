@@ -2007,6 +2007,52 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ChangeSensitiveTypeGroupCompartmentResponse changeSensitiveTypeGroupCompartment(
+            ChangeSensitiveTypeGroupCompartmentRequest request) {
+        LOG.trace("Called changeSensitiveTypeGroupCompartment");
+        final ChangeSensitiveTypeGroupCompartmentRequest interceptedRequest =
+                ChangeSensitiveTypeGroupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSensitiveTypeGroupCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSensitiveTypeGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ChangeSensitiveTypeGroupCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSensitiveTypeGroupCompartmentResponse>
+                transformer =
+                        ChangeSensitiveTypeGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSensitiveTypeGroupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeSensitiveTypesExportCompartmentResponse changeSensitiveTypesExportCompartment(
             ChangeSensitiveTypesExportCompartmentRequest request) {
         LOG.trace("Called changeSensitiveTypesExportCompartment");
@@ -3095,6 +3141,49 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public CreateSensitiveTypeGroupResponse createSensitiveTypeGroup(
+            CreateSensitiveTypeGroupRequest request) {
+        LOG.trace("Called createSensitiveTypeGroup");
+        final CreateSensitiveTypeGroupRequest interceptedRequest =
+                CreateSensitiveTypeGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSensitiveTypeGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "CreateSensitiveTypeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/CreateSensitiveTypeGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSensitiveTypeGroupResponse>
+                transformer =
+                        CreateSensitiveTypeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateSensitiveTypeGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateSensitiveTypesExportResponse createSensitiveTypesExport(
             CreateSensitiveTypesExportRequest request) {
         LOG.trace("Called createSensitiveTypesExport");
@@ -3776,6 +3865,44 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public DeleteMaskingReportResponse deleteMaskingReport(DeleteMaskingReportRequest request) {
+        LOG.trace("Called deleteMaskingReport");
+        final DeleteMaskingReportRequest interceptedRequest =
+                DeleteMaskingReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMaskingReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteMaskingReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingReport/DeleteMaskingReport");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMaskingReportResponse>
+                transformer =
+                        DeleteMaskingReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteOnPremConnectorResponse deleteOnPremConnector(
             DeleteOnPremConnectorRequest request) {
         LOG.trace("Called deleteOnPremConnector");
@@ -4109,6 +4236,45 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteSensitiveTypeResponse>
                 transformer =
                         DeleteSensitiveTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteSensitiveTypeGroupResponse deleteSensitiveTypeGroup(
+            DeleteSensitiveTypeGroupRequest request) {
+        LOG.trace("Called deleteSensitiveTypeGroup");
+        final DeleteSensitiveTypeGroupRequest interceptedRequest =
+                DeleteSensitiveTypeGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSensitiveTypeGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteSensitiveTypeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/DeleteSensitiveTypeGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSensitiveTypeGroupResponse>
+                transformer =
+                        DeleteSensitiveTypeGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6749,6 +6915,44 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public GetSensitiveTypeGroupResponse getSensitiveTypeGroup(
+            GetSensitiveTypeGroupRequest request) {
+        LOG.trace("Called getSensitiveTypeGroup");
+        final GetSensitiveTypeGroupRequest interceptedRequest =
+                GetSensitiveTypeGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSensitiveTypeGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSensitiveTypeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/GetSensitiveTypeGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSensitiveTypeGroupResponse>
+                transformer =
+                        GetSensitiveTypeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetSensitiveTypesExportResponse getSensitiveTypesExport(
             GetSensitiveTypesExportRequest request) {
         LOG.trace("Called getSensitiveTypesExport");
@@ -8130,6 +8334,44 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ListGroupedSensitiveTypesResponse listGroupedSensitiveTypes(
+            ListGroupedSensitiveTypesRequest request) {
+        LOG.trace("Called listGroupedSensitiveTypes");
+        final ListGroupedSensitiveTypesRequest interceptedRequest =
+                ListGroupedSensitiveTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGroupedSensitiveTypesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListGroupedSensitiveTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ListGroupedSensitiveTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListGroupedSensitiveTypesResponse>
+                transformer =
+                        ListGroupedSensitiveTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListLibraryMaskingFormatsResponse listLibraryMaskingFormats(
             ListLibraryMaskingFormatsRequest request) {
         LOG.trace("Called listLibraryMaskingFormats");
@@ -8262,6 +8504,43 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, ListMaskingColumnsResponse>
                 transformer =
                         ListMaskingColumnsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMaskingErrorsResponse listMaskingErrors(ListMaskingErrorsRequest request) {
+        LOG.trace("Called listMaskingErrors");
+        final ListMaskingErrorsRequest interceptedRequest =
+                ListMaskingErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaskingErrorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListMaskingErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingErrorSummary/ListMaskingErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMaskingErrorsResponse>
+                transformer =
+                        ListMaskingErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -9256,6 +9535,44 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ListSensitiveColumnAnalyticsResponse listSensitiveColumnAnalytics(
+            ListSensitiveColumnAnalyticsRequest request) {
+        LOG.trace("Called listSensitiveColumnAnalytics");
+        final ListSensitiveColumnAnalyticsRequest interceptedRequest =
+                ListSensitiveColumnAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSensitiveColumnAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSensitiveColumnAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListSensitiveColumnAnalytics");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSensitiveColumnAnalyticsResponse>
+                transformer =
+                        ListSensitiveColumnAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListSensitiveColumnsResponse listSensitiveColumns(ListSensitiveColumnsRequest request) {
         LOG.trace("Called listSensitiveColumns");
         final ListSensitiveColumnsRequest interceptedRequest =
@@ -9428,6 +9745,44 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, ListSensitiveSchemasResponse>
                 transformer =
                         ListSensitiveSchemasConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSensitiveTypeGroupsResponse listSensitiveTypeGroups(
+            ListSensitiveTypeGroupsRequest request) {
+        LOG.trace("Called listSensitiveTypeGroups");
+        final ListSensitiveTypeGroupsRequest interceptedRequest =
+                ListSensitiveTypeGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSensitiveTypeGroupsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSensitiveTypeGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroupSummary/ListSensitiveTypeGroups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSensitiveTypeGroupsResponse>
+                transformer =
+                        ListSensitiveTypeGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -10242,6 +10597,7 @@ public class DataSafeClient implements DataSafe {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
@@ -10387,6 +10743,49 @@ public class DataSafeClient implements DataSafe {
                                         client.patch(
                                                 ib,
                                                 retriedRequest.getPatchDiscoveryJobResultDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public PatchGroupedSensitiveTypesResponse patchGroupedSensitiveTypes(
+            PatchGroupedSensitiveTypesRequest request) {
+        LOG.trace("Called patchGroupedSensitiveTypes");
+        final PatchGroupedSensitiveTypesRequest interceptedRequest =
+                PatchGroupedSensitiveTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchGroupedSensitiveTypesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "PatchGroupedSensitiveTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/PatchGroupedSensitiveTypes");
+        java.util.function.Function<javax.ws.rs.core.Response, PatchGroupedSensitiveTypesResponse>
+                transformer =
+                        PatchGroupedSensitiveTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib,
+                                                retriedRequest
+                                                        .getPatchGroupedSensitiveTypesDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -12508,6 +12907,48 @@ public class DataSafeClient implements DataSafe {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateSensitiveTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateSensitiveTypeGroupResponse updateSensitiveTypeGroup(
+            UpdateSensitiveTypeGroupRequest request) {
+        LOG.trace("Called updateSensitiveTypeGroup");
+        final UpdateSensitiveTypeGroupRequest interceptedRequest =
+                UpdateSensitiveTypeGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSensitiveTypeGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSensitiveTypeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/UpdateSensitiveTypeGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSensitiveTypeGroupResponse>
+                transformer =
+                        UpdateSensitiveTypeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateSensitiveTypeGroupDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

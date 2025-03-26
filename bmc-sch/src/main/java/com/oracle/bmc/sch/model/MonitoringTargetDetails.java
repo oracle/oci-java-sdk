@@ -50,7 +50,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
         }
         /**
          * The namespace of the metric.
-         * <p>
          * Example: {@code oci_computeagent}
          *
          **/
@@ -59,7 +58,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
 
         /**
          * The namespace of the metric.
-         * <p>
          * Example: {@code oci_computeagent}
          *
          * @param metricNamespace the value to set
@@ -72,7 +70,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
         }
         /**
          * The name of the metric.
-         * <p>
          * Example: {@code CpuUtilization}
          *
          **/
@@ -81,7 +78,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
 
         /**
          * The name of the metric.
-         * <p>
          * Example: {@code CpuUtilization}
          *
          * @param metric the value to set
@@ -184,7 +180,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
 
     /**
      * The namespace of the metric.
-     * <p>
      * Example: {@code oci_computeagent}
      *
      **/
@@ -193,7 +188,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
 
     /**
      * The namespace of the metric.
-     * <p>
      * Example: {@code oci_computeagent}
      *
      * @return the value
@@ -204,7 +198,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
 
     /**
      * The name of the metric.
-     * <p>
      * Example: {@code CpuUtilization}
      *
      **/
@@ -213,7 +206,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
 
     /**
      * The name of the metric.
-     * <p>
      * Example: {@code CpuUtilization}
      *
      * @return the value

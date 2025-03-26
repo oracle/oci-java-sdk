@@ -79,6 +79,27 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Create Standby Autonomous Container Database.
+     * For more information about changing Autonomous Container Databases Add Standby, see
+     * [Create Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddStandbyAutonomousContainerDatabaseResponse>
+            addStandbyAutonomousContainerDatabase(
+                    AddStandbyAutonomousContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddStandbyAutonomousContainerDatabaseRequest,
+                                    AddStandbyAutonomousContainerDatabaseResponse>
+                            handler);
+
+    /**
      * Makes the storage capacity from additional storage servers available for Cloud VM Cluster consumption. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      *
@@ -592,6 +613,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Associate a Exadata VM cluster on Exascale Infrastructure with a different subscription.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExadbVmClusterSubscriptionResponse>
+            changeExadbVmClusterSubscription(
+                    ChangeExadbVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadbVmClusterSubscriptionRequest,
+                                    ChangeExadbVmClusterSubscriptionResponse>
+                            handler);
+
+    /**
      * Moves a Exadata Database Storage Vault to another compartment.
      *
      *
@@ -608,6 +648,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeExascaleDbStorageVaultCompartmentRequest,
                                     ChangeExascaleDbStorageVaultCompartmentResponse>
+                            handler);
+
+    /**
+     * Associate a Exadata Database Storage Vault with a different subscription.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExascaleDbStorageVaultSubscriptionResponse>
+            changeExascaleDbStorageVaultSubscription(
+                    ChangeExascaleDbStorageVaultSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExascaleDbStorageVaultSubscriptionRequest,
+                                    ChangeExascaleDbStorageVaultSubscriptionResponse>
                             handler);
 
     /**
@@ -895,6 +954,27 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ConfirmKeyStoreDetailsAreCorrectRequest,
                                     ConfirmKeyStoreDetailsAreCorrectResponse>
+                            handler);
+
+    /**
+     * Convert between and SnapshotStandby Standby Autonomous Container Database .
+     * For more information about changing Autonomous Container Databases Add Standby, see
+     * [Convert Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertStandbyAutonomousContainerDatabaseResponse>
+            convertStandbyAutonomousContainerDatabase(
+                    ConvertStandbyAutonomousContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertStandbyAutonomousContainerDatabaseRequest,
+                                    ConvertStandbyAutonomousContainerDatabaseResponse>
                             handler);
 
     /**
@@ -2567,6 +2647,27 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Edit Autonomous Container Database Dataguard.
+     * For more information about changing Autonomous Container Databases Add Standby, see
+     * [Update Autonomous Container Database Dataguard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EditAutonomousContainerDatabaseDataguardResponse>
+            editAutonomousContainerDatabaseDataguard(
+                    EditAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EditAutonomousContainerDatabaseDataguardRequest,
+                                    EditAutonomousContainerDatabaseDataguardResponse>
+                            handler);
+
+    /**
      * Enables Database Management for Autonomous Database.
      *
      *
@@ -2817,6 +2918,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             FailOverAutonomousDatabaseRequest, FailOverAutonomousDatabaseResponse>
                     handler);
+
+    /**
+     * Failover Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<FailoverAutonomousContainerDatabaseDataguardResponse>
+            failoverAutonomousContainerDatabaseDataguard(
+                    FailoverAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    FailoverAutonomousContainerDatabaseDataguardRequest,
+                                    FailoverAutonomousContainerDatabaseDataguardResponse>
+                            handler);
 
     /**
      * Fails over the standby Autonomous Container Database identified by the autonomousContainerDatabaseId parameter to the primary Autonomous Container Database after the existing primary Autonomous Container Database fails or becomes unreachable.
@@ -5671,6 +5791,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Migrate Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+            migrateAutonomousContainerDatabaseDataguardAssociation(
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler);
+
+    /**
      * Migrates the existing Data Guard association to new Data Guard model to support multiple standby databases functionality.
      * <p>
      * This operation should always be performed on primary.
@@ -5811,6 +5950,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RegisterAutonomousDatabaseDataSafeRequest,
                                     RegisterAutonomousDatabaseDataSafeResponse>
+                            handler);
+
+    /**
+     * Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ReinstateAutonomousContainerDatabaseDataguardResponse>
+            reinstateAutonomousContainerDatabaseDataguard(
+                    ReinstateAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ReinstateAutonomousContainerDatabaseDataguardRequest,
+                                    ReinstateAutonomousContainerDatabaseDataguardResponse>
                             handler);
 
     /**
@@ -6433,6 +6591,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Switchover Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchoverAutonomousContainerDatabaseDataguardResponse>
+            switchoverAutonomousContainerDatabaseDataguard(
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchoverAutonomousContainerDatabaseDataguardRequest,
+                                    SwitchoverAutonomousContainerDatabaseDataguardResponse>
+                            handler);
+
+    /**
      * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
      * <p>
      * A switchover incurs no data loss.
@@ -6719,6 +6896,21 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateAutonomousVmClusterRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateAutonomousVmClusterRequest, UpdateAutonomousVmClusterResponse>
+                    handler);
+
+    /**
+     * Updates database backup details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBackupResponse> updateBackup(
+            UpdateBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateBackupRequest, UpdateBackupResponse>
                     handler);
 
     /**

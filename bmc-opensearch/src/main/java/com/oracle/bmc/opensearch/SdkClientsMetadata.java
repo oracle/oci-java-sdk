@@ -11,6 +11,8 @@ import com.oracle.bmc.SdkClients;
     OpensearchClusterAsyncClient.class,
     OpensearchClusterBackupAsyncClient.class,
     OpensearchClusterBackupClient.class,
-    OpensearchClusterClient.class
+    OpensearchClusterClient.class,
+    OpensearchClusterPipelineAsyncClient.class,
+    OpensearchClusterPipelineClient.class
 })
 public final class SdkClientsMetadata {}

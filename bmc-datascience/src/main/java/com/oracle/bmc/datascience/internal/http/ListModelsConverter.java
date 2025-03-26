@@ -56,6 +56,14 @@ public class ListModelsConverter {
                                     request.getVersionLabel()));
         }
 
+        if (request.getCategory() != null) {
+            target =
+                    target.queryParam(
+                            "category",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCategory().getValue()));
+        }
+
         if (request.getId() != null) {
             target =
                     target.queryParam(

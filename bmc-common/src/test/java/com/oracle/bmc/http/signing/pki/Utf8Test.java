@@ -6,6 +6,11 @@ package com.oracle.bmc.http.signing.pki;
 
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -41,5 +46,13 @@ public class Utf8Test {
         final Utf8 utf8 = Utf8.of(Text.bytes(input));
         final Utf8 actual = utf8.removeWhitespace();
         assertEquals("HelloWorldAgain", Text.of(actual));
+    }
+
+    @Test
+    public void testWithChannel() throws IOException {
+        ReadableByteChannel channel =
+                Channels.newChannel(new ByteArrayInputStream("Hello world!".getBytes()));
+        Utf8 utf8 = Utf8.of(channel);
+        assertEquals("Hello world!", Text.of(utf8));
     }
 }

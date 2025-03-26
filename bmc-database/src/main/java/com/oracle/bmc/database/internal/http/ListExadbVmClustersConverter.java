@@ -88,6 +88,14 @@ public class ListExadbVmClustersConverter {
                                     request.getExascaleDbStorageVaultId()));
         }
 
+        if (request.getClusterPlacementGroupId() != null) {
+            target =
+                    target.queryParam(
+                            "clusterPlacementGroupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getClusterPlacementGroupId()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(

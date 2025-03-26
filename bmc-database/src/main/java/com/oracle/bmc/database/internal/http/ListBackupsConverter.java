@@ -73,6 +73,54 @@ public class ListBackupsConverter {
                                     request.getShapeFamily().getValue()));
         }
 
+        if (request.getVersion() != null) {
+            target =
+                    target.queryParam(
+                            "version",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVersion()));
+        }
+
+        if (request.getType() != null) {
+            target =
+                    target.queryParam(
+                            "type",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getType()));
+        }
+
+        if (request.getLifecycleState() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleState().getValue()));
+        }
+
+        if (request.getTimeExpiryScheduledGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "timeExpiryScheduledGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeExpiryScheduledGreaterThanOrEqualTo()));
+        }
+
+        if (request.getTimeExpiryScheduledLessThan() != null) {
+            target =
+                    target.queryParam(
+                            "timeExpiryScheduledLessThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeExpiryScheduledLessThan()));
+        }
+
+        if (request.getBackupDestinationType() != null) {
+            target =
+                    target.queryParam(
+                            "backupDestinationType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getBackupDestinationType()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

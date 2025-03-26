@@ -50,7 +50,10 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         "lifecycleDetails",
         "isTargetable",
         "replicationTargetId",
-        "filesystemSnapshotPolicyId"
+        "filesystemSnapshotPolicyId",
+        "areQuotaRulesEnabled",
+        "quotaEnforcementState",
+        "replicationSourceCount"
     })
     public FileSystem(
             String availabilityDomain,
@@ -73,7 +76,10 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             String lifecycleDetails,
             Boolean isTargetable,
             String replicationTargetId,
-            String filesystemSnapshotPolicyId) {
+            String filesystemSnapshotPolicyId,
+            Boolean areQuotaRulesEnabled,
+            QuotaEnforcementState quotaEnforcementState,
+            Integer replicationSourceCount) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.meteredBytes = meteredBytes;
@@ -96,6 +102,9 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         this.isTargetable = isTargetable;
         this.replicationTargetId = replicationTargetId;
         this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+        this.areQuotaRulesEnabled = areQuotaRulesEnabled;
+        this.quotaEnforcementState = quotaEnforcementState;
+        this.replicationSourceCount = replicationSourceCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -508,6 +517,54 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("filesystemSnapshotPolicyId");
             return this;
         }
+        /**
+         * Specifies the enforcement of quota rules on the file system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("areQuotaRulesEnabled")
+        private Boolean areQuotaRulesEnabled;
+
+        /**
+         * Specifies the enforcement of quota rules on the file system.
+         * @param areQuotaRulesEnabled the value to set
+         * @return this builder
+         **/
+        public Builder areQuotaRulesEnabled(Boolean areQuotaRulesEnabled) {
+            this.areQuotaRulesEnabled = areQuotaRulesEnabled;
+            this.__explicitlySet__.add("areQuotaRulesEnabled");
+            return this;
+        }
+        /**
+         * Displays the state of enforcement of quota rules on the file system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("quotaEnforcementState")
+        private QuotaEnforcementState quotaEnforcementState;
+
+        /**
+         * Displays the state of enforcement of quota rules on the file system.
+         * @param quotaEnforcementState the value to set
+         * @return this builder
+         **/
+        public Builder quotaEnforcementState(QuotaEnforcementState quotaEnforcementState) {
+            this.quotaEnforcementState = quotaEnforcementState;
+            this.__explicitlySet__.add("quotaEnforcementState");
+            return this;
+        }
+        /**
+         * Specifies the total number of replications for which this file system is a source.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationSourceCount")
+        private Integer replicationSourceCount;
+
+        /**
+         * Specifies the total number of replications for which this file system is a source.
+         * @param replicationSourceCount the value to set
+         * @return this builder
+         **/
+        public Builder replicationSourceCount(Integer replicationSourceCount) {
+            this.replicationSourceCount = replicationSourceCount;
+            this.__explicitlySet__.add("replicationSourceCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -535,7 +592,10 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.lifecycleDetails,
                             this.isTargetable,
                             this.replicationTargetId,
-                            this.filesystemSnapshotPolicyId);
+                            this.filesystemSnapshotPolicyId,
+                            this.areQuotaRulesEnabled,
+                            this.quotaEnforcementState,
+                            this.replicationSourceCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -606,6 +666,15 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
                 this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("areQuotaRulesEnabled")) {
+                this.areQuotaRulesEnabled(model.getAreQuotaRulesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("quotaEnforcementState")) {
+                this.quotaEnforcementState(model.getQuotaEnforcementState());
+            }
+            if (model.wasPropertyExplicitlySet("replicationSourceCount")) {
+                this.replicationSourceCount(model.getReplicationSourceCount());
             }
             return this;
         }
@@ -1088,6 +1157,100 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         return filesystemSnapshotPolicyId;
     }
 
+    /**
+     * Specifies the enforcement of quota rules on the file system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("areQuotaRulesEnabled")
+    private final Boolean areQuotaRulesEnabled;
+
+    /**
+     * Specifies the enforcement of quota rules on the file system.
+     * @return the value
+     **/
+    public Boolean getAreQuotaRulesEnabled() {
+        return areQuotaRulesEnabled;
+    }
+
+    /**
+     * Displays the state of enforcement of quota rules on the file system.
+     **/
+    public enum QuotaEnforcementState {
+        Enabling("ENABLING"),
+        Enabled("ENABLED"),
+        Disabling("DISABLING"),
+        Disabled("DISABLED"),
+        Syncing("SYNCING"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(QuotaEnforcementState.class);
+
+        private final String value;
+        private static java.util.Map<String, QuotaEnforcementState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (QuotaEnforcementState v : QuotaEnforcementState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        QuotaEnforcementState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static QuotaEnforcementState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'QuotaEnforcementState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Displays the state of enforcement of quota rules on the file system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("quotaEnforcementState")
+    private final QuotaEnforcementState quotaEnforcementState;
+
+    /**
+     * Displays the state of enforcement of quota rules on the file system.
+     * @return the value
+     **/
+    public QuotaEnforcementState getQuotaEnforcementState() {
+        return quotaEnforcementState;
+    }
+
+    /**
+     * Specifies the total number of replications for which this file system is a source.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationSourceCount")
+    private final Integer replicationSourceCount;
+
+    /**
+     * Specifies the total number of replications for which this file system is a source.
+     * @return the value
+     **/
+    public Integer getReplicationSourceCount() {
+        return replicationSourceCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1124,6 +1287,9 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", replicationTargetId=").append(String.valueOf(this.replicationTargetId));
         sb.append(", filesystemSnapshotPolicyId=")
                 .append(String.valueOf(this.filesystemSnapshotPolicyId));
+        sb.append(", areQuotaRulesEnabled=").append(String.valueOf(this.areQuotaRulesEnabled));
+        sb.append(", quotaEnforcementState=").append(String.valueOf(this.quotaEnforcementState));
+        sb.append(", replicationSourceCount=").append(String.valueOf(this.replicationSourceCount));
         sb.append(")");
         return sb.toString();
     }
@@ -1160,6 +1326,10 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.replicationTargetId, other.replicationTargetId)
                 && java.util.Objects.equals(
                         this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
+                && java.util.Objects.equals(this.areQuotaRulesEnabled, other.areQuotaRulesEnabled)
+                && java.util.Objects.equals(this.quotaEnforcementState, other.quotaEnforcementState)
+                && java.util.Objects.equals(
+                        this.replicationSourceCount, other.replicationSourceCount)
                 && super.equals(other);
     }
 
@@ -1212,6 +1382,21 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.filesystemSnapshotPolicyId == null
                                 ? 43
                                 : this.filesystemSnapshotPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areQuotaRulesEnabled == null
+                                ? 43
+                                : this.areQuotaRulesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.quotaEnforcementState == null
+                                ? 43
+                                : this.quotaEnforcementState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationSourceCount == null
+                                ? 43
+                                : this.replicationSourceCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

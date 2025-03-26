@@ -384,6 +384,20 @@ public interface FileStorage extends AutoCloseable {
     CreateOutboundConnectorResponse createOutboundConnector(CreateOutboundConnectorRequest request);
 
     /**
+     * Create a file system, user, or group quota rule given the `fileSystemId`, `principalId`, `principalType` and
+     * `isHardQuota` parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateQuotaRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateQuotaRule API.
+     */
+    CreateQuotaRuleResponse createQuotaRule(CreateQuotaRuleRequest request);
+
+    /**
      * Creates a new replication in the specified compartment.
      * Replications are the primary resource that governs the policy of cross-region replication between source
      * and target file systems. Replications are associated with a secondary resource called a {@link ReplicationTarget}
@@ -504,6 +518,19 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOutboundConnector API.
      */
     DeleteOutboundConnectorResponse deleteOutboundConnector(DeleteOutboundConnectorRequest request);
+
+    /**
+     * Remove a file system, user, or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteQuotaRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteQuotaRule API.
+     */
+    DeleteQuotaRuleResponse deleteQuotaRule(DeleteQuotaRuleRequest request);
 
     /**
      * Deletes the specified replication and the the associated replication target.
@@ -647,6 +674,19 @@ public interface FileStorage extends AutoCloseable {
     GetOutboundConnectorResponse getOutboundConnector(GetOutboundConnectorRequest request);
 
     /**
+     * Get a file system, user, or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetQuotaRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQuotaRule API.
+     */
+    GetQuotaRuleResponse getQuotaRule(GetQuotaRuleRequest request);
+
+    /**
      * Gets the specified replication's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -763,6 +803,19 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListOutboundConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOutboundConnectors API.
      */
     ListOutboundConnectorsResponse listOutboundConnectors(ListOutboundConnectorsRequest request);
+
+    /**
+     * List user or group usages and their quota rules by certain principal type.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListQuotaRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListQuotaRules API.
+     */
+    ListQuotaRulesResponse listQuotaRules(ListQuotaRulesRequest request);
 
     /**
      * Lists the replication target resources in the specified compartment.
@@ -929,6 +982,21 @@ public interface FileStorage extends AutoCloseable {
             ScheduleDowngradeShapeMountTargetRequest request);
 
     /**
+     * Enable or disable quota enforcement for the file system.
+     * If `areQuotaRulesEnabled` = `true`, then the quota enforcement will be enabled.
+     * If `areQuotaRulesEnabled` = `false`, then the quota enforcement will be disabled.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ToggleQuotaRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ToggleQuotaRules API.
+     */
+    ToggleQuotaRulesResponse toggleQuotaRules(ToggleQuotaRulesRequest request);
+
+    /**
      * This operation unpauses a paused file system snapshot policy and updates the lifecycle state of the file system snapshot policy from
      * INACTIVE to ACTIVE. By default, file system snapshot policies are in the ACTIVE state. When a file system snapshot policy is not paused, or in the ACTIVE state, file systems that are associated with the
      * policy will have snapshots created and deleted according to the schedules defined in the policy.
@@ -1020,6 +1088,19 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOutboundConnector API.
      */
     UpdateOutboundConnectorResponse updateOutboundConnector(UpdateOutboundConnectorRequest request);
+
+    /**
+     * Edit a file system, user, or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateQuotaRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateQuotaRule API.
+     */
+    UpdateQuotaRuleResponse updateQuotaRule(UpdateQuotaRuleRequest request);
 
     /**
      * Updates the information for the specified replication and its associated replication target.

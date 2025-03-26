@@ -51,7 +51,8 @@ public final class CreateExadbVmClusterDetails
         "freeformTags",
         "definedTags",
         "securityAttributes",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "subscriptionId"
     })
     public CreateExadbVmClusterDetails(
             String compartmentId,
@@ -81,7 +82,8 @@ public final class CreateExadbVmClusterDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String subscriptionId) {
         super();
         this.compartmentId = compartmentId;
         this.availabilityDomain = availabilityDomain;
@@ -111,6 +113,7 @@ public final class CreateExadbVmClusterDetails
         this.definedTags = definedTags;
         this.securityAttributes = securityAttributes;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.subscriptionId = subscriptionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -517,10 +520,8 @@ public final class CreateExadbVmClusterDetails
         /**
          * Grid Setup will be done using this grid image id.
          * <p>
-         * The grid image id can be extracted from
-         * 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-         * 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-         * API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+         * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
@@ -529,10 +530,8 @@ public final class CreateExadbVmClusterDetails
         /**
          * Grid Setup will be done using this grid image id.
          * <p>
-         * The grid image id can be extracted from
-         * 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-         * 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-         * API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+         * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
          *
          * @param gridImageId the value to set
          * @return this builder
@@ -635,6 +634,22 @@ public final class CreateExadbVmClusterDetails
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -669,7 +684,8 @@ public final class CreateExadbVmClusterDetails
                             this.freeformTags,
                             this.definedTags,
                             this.securityAttributes,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -761,6 +777,9 @@ public final class CreateExadbVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             return this;
         }
@@ -1171,10 +1190,8 @@ public final class CreateExadbVmClusterDetails
     /**
      * Grid Setup will be done using this grid image id.
      * <p>
-     * The grid image id can be extracted from
-     * 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-     * 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-     * API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+     * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
@@ -1183,10 +1200,8 @@ public final class CreateExadbVmClusterDetails
     /**
      * Grid Setup will be done using this grid image id.
      * <p>
-     * The grid image id can be extracted from
-     * 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-     * 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-     * API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+     * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      *
      * @return the value
      **/
@@ -1275,6 +1290,20 @@ public final class CreateExadbVmClusterDetails
         return dataCollectionOptions;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1318,6 +1347,7 @@ public final class CreateExadbVmClusterDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -1362,6 +1392,7 @@ public final class CreateExadbVmClusterDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -1443,6 +1474,9 @@ public final class CreateExadbVmClusterDetails
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -97,6 +97,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.marketplaceprivateoffer.SdkClientsMetadata",
     "com.oracle.bmc.marketplacepublisher.SdkClientsMetadata",
     "com.oracle.bmc.mediaservices.SdkClientsMetadata",
+    "com.oracle.bmc.mngdmac.SdkClientsMetadata",
     "com.oracle.bmc.monitoring.SdkClientsMetadata",
     "com.oracle.bmc.mysql.SdkClientsMetadata",
     "com.oracle.bmc.networkfirewall.SdkClientsMetadata",

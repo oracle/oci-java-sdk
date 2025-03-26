@@ -32,16 +32,19 @@ public final class OpensearchClusterPipeline
         "subnetId",
         "vcnCompartmentId",
         "subnetCompartmentId",
-        "maxOcpuCount",
-        "minOcpuCount",
-        "maxMemoryGB",
-        "minMemoryGB",
+        "ocpuCount",
+        "memoryGB",
+        "nodeCount",
         "pipelineConfigurationBody",
+        "dataPrepperConfigurationBody",
         "opensearchPipelineFqdn",
         "opensearchPipelinePrivateIp",
         "lifecycleState",
+        "pipelineMode",
         "timeCreated",
         "timeUpdated",
+        "reverseConnectionEndpoints",
+        "nsgId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -54,16 +57,19 @@ public final class OpensearchClusterPipeline
             String subnetId,
             String vcnCompartmentId,
             String subnetCompartmentId,
-            Integer maxOcpuCount,
-            Integer minOcpuCount,
-            Integer maxMemoryGB,
-            Integer minMemoryGB,
+            Integer ocpuCount,
+            Integer memoryGB,
+            Integer nodeCount,
             String pipelineConfigurationBody,
+            String dataPrepperConfigurationBody,
             String opensearchPipelineFqdn,
             String opensearchPipelinePrivateIp,
             LifecycleState lifecycleState,
+            PipelineMode pipelineMode,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<OpensearchPipelineReverseConnectionEndpoint> reverseConnectionEndpoints,
+            String nsgId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -75,16 +81,19 @@ public final class OpensearchClusterPipeline
         this.subnetId = subnetId;
         this.vcnCompartmentId = vcnCompartmentId;
         this.subnetCompartmentId = subnetCompartmentId;
-        this.maxOcpuCount = maxOcpuCount;
-        this.minOcpuCount = minOcpuCount;
-        this.maxMemoryGB = maxMemoryGB;
-        this.minMemoryGB = minMemoryGB;
+        this.ocpuCount = ocpuCount;
+        this.memoryGB = memoryGB;
+        this.nodeCount = nodeCount;
         this.pipelineConfigurationBody = pipelineConfigurationBody;
+        this.dataPrepperConfigurationBody = dataPrepperConfigurationBody;
         this.opensearchPipelineFqdn = opensearchPipelineFqdn;
         this.opensearchPipelinePrivateIp = opensearchPipelinePrivateIp;
         this.lifecycleState = lifecycleState;
+        this.pipelineMode = pipelineMode;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.reverseConnectionEndpoints = reverseConnectionEndpoints;
+        this.nsgId = nsgId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -189,13 +198,13 @@ public final class OpensearchClusterPipeline
             return this;
         }
         /**
-         * The OCID for the compartment where the pipwline's subnet is located.
+         * The OCID for the compartment where the pipeline's subnet is located.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetCompartmentId")
         private String subnetCompartmentId;
 
         /**
-         * The OCID for the compartment where the pipwline's subnet is located.
+         * The OCID for the compartment where the pipeline's subnet is located.
          * @param subnetCompartmentId the value to set
          * @return this builder
          **/
@@ -205,67 +214,51 @@ public final class OpensearchClusterPipeline
             return this;
         }
         /**
-         * The maximum pipeline capacity, in OCPUs.
+         * The number of OCPUs configured for each pipeline node.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("maxOcpuCount")
-        private Integer maxOcpuCount;
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Integer ocpuCount;
 
         /**
-         * The maximum pipeline capacity, in OCPUs.
-         * @param maxOcpuCount the value to set
+         * The number of OCPUs configured for each pipeline node.
+         * @param ocpuCount the value to set
          * @return this builder
          **/
-        public Builder maxOcpuCount(Integer maxOcpuCount) {
-            this.maxOcpuCount = maxOcpuCount;
-            this.__explicitlySet__.add("maxOcpuCount");
+        public Builder ocpuCount(Integer ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
             return this;
         }
         /**
-         * The maximum pipeline capacity, in OCPUs.
+         * The amount of memory in GB, for each pipeline node.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("minOcpuCount")
-        private Integer minOcpuCount;
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
+        private Integer memoryGB;
 
         /**
-         * The maximum pipeline capacity, in OCPUs.
-         * @param minOcpuCount the value to set
+         * The amount of memory in GB, for each pipeline node.
+         * @param memoryGB the value to set
          * @return this builder
          **/
-        public Builder minOcpuCount(Integer minOcpuCount) {
-            this.minOcpuCount = minOcpuCount;
-            this.__explicitlySet__.add("minOcpuCount");
+        public Builder memoryGB(Integer memoryGB) {
+            this.memoryGB = memoryGB;
+            this.__explicitlySet__.add("memoryGB");
             return this;
         }
         /**
-         * The maximum amount of memory in GB, for the pipeline.
+         * The number of nodes configured for the pipeline.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryGB")
-        private Integer maxMemoryGB;
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+        private Integer nodeCount;
 
         /**
-         * The maximum amount of memory in GB, for the pipeline.
-         * @param maxMemoryGB the value to set
+         * The number of nodes configured for the pipeline.
+         * @param nodeCount the value to set
          * @return this builder
          **/
-        public Builder maxMemoryGB(Integer maxMemoryGB) {
-            this.maxMemoryGB = maxMemoryGB;
-            this.__explicitlySet__.add("maxMemoryGB");
-            return this;
-        }
-        /**
-         * The minimum amount of memory in GB, for the pipeline.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("minMemoryGB")
-        private Integer minMemoryGB;
-
-        /**
-         * The minimum amount of memory in GB, for the pipeline.
-         * @param minMemoryGB the value to set
-         * @return this builder
-         **/
-        public Builder minMemoryGB(Integer minMemoryGB) {
-            this.minMemoryGB = minMemoryGB;
-            this.__explicitlySet__.add("minMemoryGB");
+        public Builder nodeCount(Integer nodeCount) {
+            this.nodeCount = nodeCount;
+            this.__explicitlySet__.add("nodeCount");
             return this;
         }
         /**
@@ -284,6 +277,24 @@ public final class OpensearchClusterPipeline
         public Builder pipelineConfigurationBody(String pipelineConfigurationBody) {
             this.pipelineConfigurationBody = pipelineConfigurationBody;
             this.__explicitlySet__.add("pipelineConfigurationBody");
+            return this;
+        }
+        /**
+         * The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataPrepperConfigurationBody")
+        private String dataPrepperConfigurationBody;
+
+        /**
+         * The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+         *
+         * @param dataPrepperConfigurationBody the value to set
+         * @return this builder
+         **/
+        public Builder dataPrepperConfigurationBody(String dataPrepperConfigurationBody) {
+            this.dataPrepperConfigurationBody = dataPrepperConfigurationBody;
+            this.__explicitlySet__.add("dataPrepperConfigurationBody");
             return this;
         }
         /**
@@ -335,6 +346,22 @@ public final class OpensearchClusterPipeline
             return this;
         }
         /**
+         * The current state of the pipeline.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pipelineMode")
+        private PipelineMode pipelineMode;
+
+        /**
+         * The current state of the pipeline.
+         * @param pipelineMode the value to set
+         * @return this builder
+         **/
+        public Builder pipelineMode(PipelineMode pipelineMode) {
+            this.pipelineMode = pipelineMode;
+            this.__explicitlySet__.add("pipelineMode");
+            return this;
+        }
+        /**
          * The date and time the cluster pipeline was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -364,6 +391,41 @@ public final class OpensearchClusterPipeline
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
+         * The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpoints")
+        private java.util.List<OpensearchPipelineReverseConnectionEndpoint>
+                reverseConnectionEndpoints;
+
+        /**
+         * The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+         * @param reverseConnectionEndpoints the value to set
+         * @return this builder
+         **/
+        public Builder reverseConnectionEndpoints(
+                java.util.List<OpensearchPipelineReverseConnectionEndpoint>
+                        reverseConnectionEndpoints) {
+            this.reverseConnectionEndpoints = reverseConnectionEndpoints;
+            this.__explicitlySet__.add("reverseConnectionEndpoints");
+            return this;
+        }
+        /**
+         * The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgId")
+        private String nsgId;
+
+        /**
+         * The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+         * @param nsgId the value to set
+         * @return this builder
+         **/
+        public Builder nsgId(String nsgId) {
+            this.nsgId = nsgId;
+            this.__explicitlySet__.add("nsgId");
             return this;
         }
         /**
@@ -441,16 +503,19 @@ public final class OpensearchClusterPipeline
                             this.subnetId,
                             this.vcnCompartmentId,
                             this.subnetCompartmentId,
-                            this.maxOcpuCount,
-                            this.minOcpuCount,
-                            this.maxMemoryGB,
-                            this.minMemoryGB,
+                            this.ocpuCount,
+                            this.memoryGB,
+                            this.nodeCount,
                             this.pipelineConfigurationBody,
+                            this.dataPrepperConfigurationBody,
                             this.opensearchPipelineFqdn,
                             this.opensearchPipelinePrivateIp,
                             this.lifecycleState,
+                            this.pipelineMode,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.reverseConnectionEndpoints,
+                            this.nsgId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -483,20 +548,20 @@ public final class OpensearchClusterPipeline
             if (model.wasPropertyExplicitlySet("subnetCompartmentId")) {
                 this.subnetCompartmentId(model.getSubnetCompartmentId());
             }
-            if (model.wasPropertyExplicitlySet("maxOcpuCount")) {
-                this.maxOcpuCount(model.getMaxOcpuCount());
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
             }
-            if (model.wasPropertyExplicitlySet("minOcpuCount")) {
-                this.minOcpuCount(model.getMinOcpuCount());
+            if (model.wasPropertyExplicitlySet("memoryGB")) {
+                this.memoryGB(model.getMemoryGB());
             }
-            if (model.wasPropertyExplicitlySet("maxMemoryGB")) {
-                this.maxMemoryGB(model.getMaxMemoryGB());
-            }
-            if (model.wasPropertyExplicitlySet("minMemoryGB")) {
-                this.minMemoryGB(model.getMinMemoryGB());
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
             }
             if (model.wasPropertyExplicitlySet("pipelineConfigurationBody")) {
                 this.pipelineConfigurationBody(model.getPipelineConfigurationBody());
+            }
+            if (model.wasPropertyExplicitlySet("dataPrepperConfigurationBody")) {
+                this.dataPrepperConfigurationBody(model.getDataPrepperConfigurationBody());
             }
             if (model.wasPropertyExplicitlySet("opensearchPipelineFqdn")) {
                 this.opensearchPipelineFqdn(model.getOpensearchPipelineFqdn());
@@ -507,11 +572,20 @@ public final class OpensearchClusterPipeline
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("pipelineMode")) {
+                this.pipelineMode(model.getPipelineMode());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("reverseConnectionEndpoints")) {
+                this.reverseConnectionEndpoints(model.getReverseConnectionEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("nsgId")) {
+                this.nsgId(model.getNsgId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -622,13 +696,13 @@ public final class OpensearchClusterPipeline
     }
 
     /**
-     * The OCID for the compartment where the pipwline's subnet is located.
+     * The OCID for the compartment where the pipeline's subnet is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetCompartmentId")
     private final String subnetCompartmentId;
 
     /**
-     * The OCID for the compartment where the pipwline's subnet is located.
+     * The OCID for the compartment where the pipeline's subnet is located.
      * @return the value
      **/
     public String getSubnetCompartmentId() {
@@ -636,59 +710,45 @@ public final class OpensearchClusterPipeline
     }
 
     /**
-     * The maximum pipeline capacity, in OCPUs.
+     * The number of OCPUs configured for each pipeline node.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("maxOcpuCount")
-    private final Integer maxOcpuCount;
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    private final Integer ocpuCount;
 
     /**
-     * The maximum pipeline capacity, in OCPUs.
+     * The number of OCPUs configured for each pipeline node.
      * @return the value
      **/
-    public Integer getMaxOcpuCount() {
-        return maxOcpuCount;
+    public Integer getOcpuCount() {
+        return ocpuCount;
     }
 
     /**
-     * The maximum pipeline capacity, in OCPUs.
+     * The amount of memory in GB, for each pipeline node.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("minOcpuCount")
-    private final Integer minOcpuCount;
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
+    private final Integer memoryGB;
 
     /**
-     * The maximum pipeline capacity, in OCPUs.
+     * The amount of memory in GB, for each pipeline node.
      * @return the value
      **/
-    public Integer getMinOcpuCount() {
-        return minOcpuCount;
+    public Integer getMemoryGB() {
+        return memoryGB;
     }
 
     /**
-     * The maximum amount of memory in GB, for the pipeline.
+     * The number of nodes configured for the pipeline.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryGB")
-    private final Integer maxMemoryGB;
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+    private final Integer nodeCount;
 
     /**
-     * The maximum amount of memory in GB, for the pipeline.
+     * The number of nodes configured for the pipeline.
      * @return the value
      **/
-    public Integer getMaxMemoryGB() {
-        return maxMemoryGB;
-    }
-
-    /**
-     * The minimum amount of memory in GB, for the pipeline.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("minMemoryGB")
-    private final Integer minMemoryGB;
-
-    /**
-     * The minimum amount of memory in GB, for the pipeline.
-     * @return the value
-     **/
-    public Integer getMinMemoryGB() {
-        return minMemoryGB;
+    public Integer getNodeCount() {
+        return nodeCount;
     }
 
     /**
@@ -705,6 +765,22 @@ public final class OpensearchClusterPipeline
      **/
     public String getPipelineConfigurationBody() {
         return pipelineConfigurationBody;
+    }
+
+    /**
+     * The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataPrepperConfigurationBody")
+    private final String dataPrepperConfigurationBody;
+
+    /**
+     * The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+     *
+     * @return the value
+     **/
+    public String getDataPrepperConfigurationBody() {
+        return dataPrepperConfigurationBody;
     }
 
     /**
@@ -745,7 +821,15 @@ public final class OpensearchClusterPipeline
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -753,7 +837,9 @@ public final class OpensearchClusterPipeline
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -771,7 +857,10 @@ public final class OpensearchClusterPipeline
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -786,6 +875,68 @@ public final class OpensearchClusterPipeline
      **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * The current state of the pipeline.
+     **/
+    public enum PipelineMode {
+        Running("RUNNING"),
+        Stopped("STOPPED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PipelineMode.class);
+
+        private final String value;
+        private static java.util.Map<String, PipelineMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PipelineMode v : PipelineMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PipelineMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PipelineMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PipelineMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of the pipeline.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pipelineMode")
+    private final PipelineMode pipelineMode;
+
+    /**
+     * The current state of the pipeline.
+     * @return the value
+     **/
+    public PipelineMode getPipelineMode() {
+        return pipelineMode;
     }
 
     /**
@@ -814,6 +965,36 @@ public final class OpensearchClusterPipeline
      **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
+    }
+
+    /**
+     * The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpoints")
+    private final java.util.List<OpensearchPipelineReverseConnectionEndpoint>
+            reverseConnectionEndpoints;
+
+    /**
+     * The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+     * @return the value
+     **/
+    public java.util.List<OpensearchPipelineReverseConnectionEndpoint>
+            getReverseConnectionEndpoints() {
+        return reverseConnectionEndpoints;
+    }
+
+    /**
+     * The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgId")
+    private final String nsgId;
+
+    /**
+     * The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+     * @return the value
+     **/
+    public String getNsgId() {
+        return nsgId;
     }
 
     /**
@@ -891,18 +1072,23 @@ public final class OpensearchClusterPipeline
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", vcnCompartmentId=").append(String.valueOf(this.vcnCompartmentId));
         sb.append(", subnetCompartmentId=").append(String.valueOf(this.subnetCompartmentId));
-        sb.append(", maxOcpuCount=").append(String.valueOf(this.maxOcpuCount));
-        sb.append(", minOcpuCount=").append(String.valueOf(this.minOcpuCount));
-        sb.append(", maxMemoryGB=").append(String.valueOf(this.maxMemoryGB));
-        sb.append(", minMemoryGB=").append(String.valueOf(this.minMemoryGB));
+        sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", memoryGB=").append(String.valueOf(this.memoryGB));
+        sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", pipelineConfigurationBody=")
                 .append(String.valueOf(this.pipelineConfigurationBody));
+        sb.append(", dataPrepperConfigurationBody=")
+                .append(String.valueOf(this.dataPrepperConfigurationBody));
         sb.append(", opensearchPipelineFqdn=").append(String.valueOf(this.opensearchPipelineFqdn));
         sb.append(", opensearchPipelinePrivateIp=")
                 .append(String.valueOf(this.opensearchPipelinePrivateIp));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", pipelineMode=").append(String.valueOf(this.pipelineMode));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", reverseConnectionEndpoints=")
+                .append(String.valueOf(this.reverseConnectionEndpoints));
+        sb.append(", nsgId=").append(String.valueOf(this.nsgId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -927,19 +1113,24 @@ public final class OpensearchClusterPipeline
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.vcnCompartmentId, other.vcnCompartmentId)
                 && java.util.Objects.equals(this.subnetCompartmentId, other.subnetCompartmentId)
-                && java.util.Objects.equals(this.maxOcpuCount, other.maxOcpuCount)
-                && java.util.Objects.equals(this.minOcpuCount, other.minOcpuCount)
-                && java.util.Objects.equals(this.maxMemoryGB, other.maxMemoryGB)
-                && java.util.Objects.equals(this.minMemoryGB, other.minMemoryGB)
+                && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.memoryGB, other.memoryGB)
+                && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(
                         this.pipelineConfigurationBody, other.pipelineConfigurationBody)
+                && java.util.Objects.equals(
+                        this.dataPrepperConfigurationBody, other.dataPrepperConfigurationBody)
                 && java.util.Objects.equals(
                         this.opensearchPipelineFqdn, other.opensearchPipelineFqdn)
                 && java.util.Objects.equals(
                         this.opensearchPipelinePrivateIp, other.opensearchPipelinePrivateIp)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.pipelineMode, other.pipelineMode)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(
+                        this.reverseConnectionEndpoints, other.reverseConnectionEndpoints)
+                && java.util.Objects.equals(this.nsgId, other.nsgId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -965,15 +1156,19 @@ public final class OpensearchClusterPipeline
                         + (this.subnetCompartmentId == null
                                 ? 43
                                 : this.subnetCompartmentId.hashCode());
-        result = (result * PRIME) + (this.maxOcpuCount == null ? 43 : this.maxOcpuCount.hashCode());
-        result = (result * PRIME) + (this.minOcpuCount == null ? 43 : this.minOcpuCount.hashCode());
-        result = (result * PRIME) + (this.maxMemoryGB == null ? 43 : this.maxMemoryGB.hashCode());
-        result = (result * PRIME) + (this.minMemoryGB == null ? 43 : this.minMemoryGB.hashCode());
+        result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result = (result * PRIME) + (this.memoryGB == null ? 43 : this.memoryGB.hashCode());
+        result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result =
                 (result * PRIME)
                         + (this.pipelineConfigurationBody == null
                                 ? 43
                                 : this.pipelineConfigurationBody.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataPrepperConfigurationBody == null
+                                ? 43
+                                : this.dataPrepperConfigurationBody.hashCode());
         result =
                 (result * PRIME)
                         + (this.opensearchPipelineFqdn == null
@@ -987,8 +1182,15 @@ public final class OpensearchClusterPipeline
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.pipelineMode == null ? 43 : this.pipelineMode.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reverseConnectionEndpoints == null
+                                ? 43
+                                : this.reverseConnectionEndpoints.hashCode());
+        result = (result * PRIME) + (this.nsgId == null ? 43 : this.nsgId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
