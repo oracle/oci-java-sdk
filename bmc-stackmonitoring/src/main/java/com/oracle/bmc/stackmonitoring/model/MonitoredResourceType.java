@@ -31,6 +31,10 @@ public final class MonitoredResourceType
         "description",
         "metricNamespace",
         "compartmentId",
+        "tenancyId",
+        "availabilityMetricsConfig",
+        "handlerConfig",
+        "isSystemDefined",
         "lifecycleState",
         "sourceType",
         "resourceCategory",
@@ -49,6 +53,10 @@ public final class MonitoredResourceType
             String description,
             String metricNamespace,
             String compartmentId,
+            String tenancyId,
+            AvailabilityMetricsDetails availabilityMetricsConfig,
+            AgentExtensionHandlerConfiguration handlerConfig,
+            Boolean isSystemDefined,
             ResourceTypeLifecycleState lifecycleState,
             SourceType sourceType,
             ResourceCategory resourceCategory,
@@ -66,6 +74,10 @@ public final class MonitoredResourceType
         this.description = description;
         this.metricNamespace = metricNamespace;
         this.compartmentId = compartmentId;
+        this.tenancyId = tenancyId;
+        this.availabilityMetricsConfig = availabilityMetricsConfig;
+        this.handlerConfig = handlerConfig;
+        this.isSystemDefined = isSystemDefined;
         this.lifecycleState = lifecycleState;
         this.sourceType = sourceType;
         this.resourceCategory = resourceCategory;
@@ -164,15 +176,15 @@ public final class MonitoredResourceType
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy containing the resource type.
+         * Compartment Identifier
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy containing the resource type.
+         * Compartment Identifier
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -180,6 +192,59 @@ public final class MonitoredResourceType
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * Tenancy Identifier
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
+        private String tenancyId;
+
+        /**
+         * Tenancy Identifier
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param tenancyId the value to set
+         * @return this builder
+         */
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = tenancyId;
+            this.__explicitlySet__.add("tenancyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityMetricsConfig")
+        private AvailabilityMetricsDetails availabilityMetricsConfig;
+
+        public Builder availabilityMetricsConfig(
+                AvailabilityMetricsDetails availabilityMetricsConfig) {
+            this.availabilityMetricsConfig = availabilityMetricsConfig;
+            this.__explicitlySet__.add("availabilityMetricsConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("handlerConfig")
+        private AgentExtensionHandlerConfiguration handlerConfig;
+
+        public Builder handlerConfig(AgentExtensionHandlerConfiguration handlerConfig) {
+            this.handlerConfig = handlerConfig;
+            this.__explicitlySet__.add("handlerConfig");
+            return this;
+        }
+        /** If boolean flag is true, then the resource type cannot be modified or deleted. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSystemDefined")
+        private Boolean isSystemDefined;
+
+        /**
+         * If boolean flag is true, then the resource type cannot be modified or deleted.
+         *
+         * @param isSystemDefined the value to set
+         * @return this builder
+         */
+        public Builder isSystemDefined(Boolean isSystemDefined) {
+            this.isSystemDefined = isSystemDefined;
+            this.__explicitlySet__.add("isSystemDefined");
             return this;
         }
         /** Lifecycle state of the monitored resource type. */
@@ -369,6 +434,10 @@ public final class MonitoredResourceType
                             this.description,
                             this.metricNamespace,
                             this.compartmentId,
+                            this.tenancyId,
+                            this.availabilityMetricsConfig,
+                            this.handlerConfig,
+                            this.isSystemDefined,
                             this.lifecycleState,
                             this.sourceType,
                             this.resourceCategory,
@@ -404,6 +473,18 @@ public final class MonitoredResourceType
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityMetricsConfig")) {
+                this.availabilityMetricsConfig(model.getAvailabilityMetricsConfig());
+            }
+            if (model.wasPropertyExplicitlySet("handlerConfig")) {
+                this.handlerConfig(model.getHandlerConfig());
+            }
+            if (model.wasPropertyExplicitlySet("isSystemDefined")) {
+                this.isSystemDefined(model.getIsSystemDefined());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -522,20 +603,64 @@ public final class MonitoredResourceType
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy containing the resource type.
+     * Compartment Identifier
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy containing the resource type.
+     * Compartment Identifier
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * Tenancy Identifier
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
+    private final String tenancyId;
+
+    /**
+     * Tenancy Identifier
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     */
+    public String getTenancyId() {
+        return tenancyId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityMetricsConfig")
+    private final AvailabilityMetricsDetails availabilityMetricsConfig;
+
+    public AvailabilityMetricsDetails getAvailabilityMetricsConfig() {
+        return availabilityMetricsConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("handlerConfig")
+    private final AgentExtensionHandlerConfiguration handlerConfig;
+
+    public AgentExtensionHandlerConfiguration getHandlerConfig() {
+        return handlerConfig;
+    }
+
+    /** If boolean flag is true, then the resource type cannot be modified or deleted. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSystemDefined")
+    private final Boolean isSystemDefined;
+
+    /**
+     * If boolean flag is true, then the resource type cannot be modified or deleted.
+     *
+     * @return the value
+     */
+    public Boolean getIsSystemDefined() {
+        return isSystemDefined;
     }
 
     /** Lifecycle state of the monitored resource type. */
@@ -711,6 +836,11 @@ public final class MonitoredResourceType
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", metricNamespace=").append(String.valueOf(this.metricNamespace));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", availabilityMetricsConfig=")
+                .append(String.valueOf(this.availabilityMetricsConfig));
+        sb.append(", handlerConfig=").append(String.valueOf(this.handlerConfig));
+        sb.append(", isSystemDefined=").append(String.valueOf(this.isSystemDefined));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
@@ -741,6 +871,11 @@ public final class MonitoredResourceType
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.metricNamespace, other.metricNamespace)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(
+                        this.availabilityMetricsConfig, other.availabilityMetricsConfig)
+                && java.util.Objects.equals(this.handlerConfig, other.handlerConfig)
+                && java.util.Objects.equals(this.isSystemDefined, other.isSystemDefined)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
@@ -769,6 +904,18 @@ public final class MonitoredResourceType
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityMetricsConfig == null
+                                ? 43
+                                : this.availabilityMetricsConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.handlerConfig == null ? 43 : this.handlerConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSystemDefined == null ? 43 : this.isSystemDefined.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

@@ -2266,6 +2266,122 @@ public class ComputePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listComputeHosts operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListComputeHostsResponse> listComputeHostsResponseIterator(
+            final ListComputeHostsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeHostsRequest.Builder, ListComputeHostsRequest, ListComputeHostsResponse>(
+                new java.util.function.Supplier<ListComputeHostsRequest.Builder>() {
+                    @Override
+                    public ListComputeHostsRequest.Builder get() {
+                        return ListComputeHostsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeHostsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeHostsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeHostsRequest.Builder>,
+                        ListComputeHostsRequest>() {
+                    @Override
+                    public ListComputeHostsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeHostsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsRequest, ListComputeHostsResponse>() {
+                    @Override
+                    public ListComputeHostsResponse apply(ListComputeHostsRequest request) {
+                        return client.listComputeHosts(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.core.model.ComputeHostSummary} objects contained in responses from the
+     * listComputeHosts operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.core.model.ComputeHostSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeHostSummary> listComputeHostsRecordIterator(
+            final ListComputeHostsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeHostsRequest.Builder,
+                ListComputeHostsRequest,
+                ListComputeHostsResponse,
+                com.oracle.bmc.core.model.ComputeHostSummary>(
+                new java.util.function.Supplier<ListComputeHostsRequest.Builder>() {
+                    @Override
+                    public ListComputeHostsRequest.Builder get() {
+                        return ListComputeHostsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeHostsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeHostsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeHostsRequest.Builder>,
+                        ListComputeHostsRequest>() {
+                    @Override
+                    public ListComputeHostsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeHostsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsRequest, ListComputeHostsResponse>() {
+                    @Override
+                    public ListComputeHostsResponse apply(ListComputeHostsRequest request) {
+                        return client.listComputeHosts(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsResponse,
+                        java.util.List<com.oracle.bmc.core.model.ComputeHostSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ComputeHostSummary> apply(
+                            ListComputeHostsResponse response) {
+                        return response.getComputeHostCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listComputeImageCapabilitySchemas operation. This iterable will fetch more data from the
      * server as needed.
      *

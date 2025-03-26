@@ -51,8 +51,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
         /**
          * Whether to apply a simplified, user-friendly format to the message. Applies only when
          * friendly formatting is supported by the connector source and the subscription protocol.
-         *
-         * <p>Example: {@code true}
+         * Example: {@code true}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
         private Boolean enableFormattedMessaging;
@@ -60,8 +59,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
         /**
          * Whether to apply a simplified, user-friendly format to the message. Applies only when
          * friendly formatting is supported by the connector source and the subscription protocol.
-         *
-         * <p>Example: {@code true}
+         * Example: {@code true}
          *
          * @param enableFormattedMessaging the value to set
          * @return this builder
@@ -132,8 +130,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
     /**
      * Whether to apply a simplified, user-friendly format to the message. Applies only when
      * friendly formatting is supported by the connector source and the subscription protocol.
-     *
-     * <p>Example: {@code true}
+     * Example: {@code true}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
     private final Boolean enableFormattedMessaging;
@@ -141,8 +138,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
     /**
      * Whether to apply a simplified, user-friendly format to the message. Applies only when
      * friendly formatting is supported by the connector source and the subscription protocol.
-     *
-     * <p>Example: {@code true}
+     * Example: {@code true}
      *
      * @return the value
      */

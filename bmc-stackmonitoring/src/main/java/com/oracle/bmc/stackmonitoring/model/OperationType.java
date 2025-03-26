@@ -27,6 +27,8 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateMaintenanceWindow("UPDATE_MAINTENANCE_WINDOW"),
     DeleteMaintenanceWindow("DELETE_MAINTENANCE_WINDOW"),
     StopMaintenanceWindow("STOP_MAINTENANCE_WINDOW"),
+    UpdateAgentReceiver("UPDATE_AGENT_RECEIVER"),
+    UpdateResourceTypeConfigs("UPDATE_RESOURCE_TYPE_CONFIGS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

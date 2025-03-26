@@ -48,12 +48,16 @@ public final class FunctionsTargetDetails extends TargetDetails {
             this.__explicitlySet__.add("functionId");
             return this;
         }
-        /** The batch rollover size in kilobytes. */
+        /**
+         * The batch rollover size in kilobytes. Only one size option can be specified: {@code
+         * batchSizeInKbs} or {@code batchSizeInNum}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInKbs")
         private Integer batchSizeInKbs;
 
         /**
-         * The batch rollover size in kilobytes.
+         * The batch rollover size in kilobytes. Only one size option can be specified: {@code
+         * batchSizeInKbs} or {@code batchSizeInNum}.
          *
          * @param batchSizeInKbs the value to set
          * @return this builder
@@ -63,12 +67,16 @@ public final class FunctionsTargetDetails extends TargetDetails {
             this.__explicitlySet__.add("batchSizeInKbs");
             return this;
         }
-        /** The batch rollover size in number of messages. */
+        /**
+         * The batch rollover size in number of messages. Only one size option can be specified:
+         * {@code batchSizeInKbs} or {@code batchSizeInNum}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInNum")
         private Integer batchSizeInNum;
 
         /**
-         * The batch rollover size in number of messages.
+         * The batch rollover size in number of messages. Only one size option can be specified:
+         * {@code batchSizeInKbs} or {@code batchSizeInNum}.
          *
          * @param batchSizeInNum the value to set
          * @return this builder
@@ -167,12 +175,16 @@ public final class FunctionsTargetDetails extends TargetDetails {
         return functionId;
     }
 
-    /** The batch rollover size in kilobytes. */
+    /**
+     * The batch rollover size in kilobytes. Only one size option can be specified: {@code
+     * batchSizeInKbs} or {@code batchSizeInNum}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInKbs")
     private final Integer batchSizeInKbs;
 
     /**
-     * The batch rollover size in kilobytes.
+     * The batch rollover size in kilobytes. Only one size option can be specified: {@code
+     * batchSizeInKbs} or {@code batchSizeInNum}.
      *
      * @return the value
      */
@@ -180,12 +192,16 @@ public final class FunctionsTargetDetails extends TargetDetails {
         return batchSizeInKbs;
     }
 
-    /** The batch rollover size in number of messages. */
+    /**
+     * The batch rollover size in number of messages. Only one size option can be specified: {@code
+     * batchSizeInKbs} or {@code batchSizeInNum}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInNum")
     private final Integer batchSizeInNum;
 
     /**
-     * The batch rollover size in number of messages.
+     * The batch rollover size in number of messages. Only one size option can be specified: {@code
+     * batchSizeInKbs} or {@code batchSizeInNum}.
      *
      * @return the value
      */

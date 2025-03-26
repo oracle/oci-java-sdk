@@ -28,6 +28,7 @@ public final class CreateDataSourceDetails
         "description",
         "knowledgeBaseId",
         "dataSourceConfig",
+        "metadata",
         "compartmentId",
         "freeformTags",
         "definedTags"
@@ -37,6 +38,7 @@ public final class CreateDataSourceDetails
             String description,
             String knowledgeBaseId,
             DataSourceConfig dataSourceConfig,
+            java.util.Map<String, String> metadata,
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -45,6 +47,7 @@ public final class CreateDataSourceDetails
         this.description = description;
         this.knowledgeBaseId = knowledgeBaseId;
         this.dataSourceConfig = dataSourceConfig;
+        this.metadata = metadata;
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -112,6 +115,21 @@ public final class CreateDataSourceDetails
         public Builder dataSourceConfig(DataSourceConfig dataSourceConfig) {
             this.dataSourceConfig = dataSourceConfig;
             this.__explicitlySet__.add("dataSourceConfig");
+            return this;
+        }
+        /** Key-value pairs to allow additional configurations. */
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
+
+        /**
+         * Key-value pairs to allow additional configurations.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         */
+        public Builder metadata(java.util.Map<String, String> metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
@@ -195,6 +213,7 @@ public final class CreateDataSourceDetails
                             this.description,
                             this.knowledgeBaseId,
                             this.dataSourceConfig,
+                            this.metadata,
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags);
@@ -217,6 +236,9 @@ public final class CreateDataSourceDetails
             }
             if (model.wasPropertyExplicitlySet("dataSourceConfig")) {
                 this.dataSourceConfig(model.getDataSourceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -292,6 +314,19 @@ public final class CreateDataSourceDetails
 
     public DataSourceConfig getDataSourceConfig() {
         return dataSourceConfig;
+    }
+
+    /** Key-value pairs to allow additional configurations. */
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final java.util.Map<String, String> metadata;
+
+    /**
+     * Key-value pairs to allow additional configurations.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
     }
 
     /**
@@ -376,6 +411,7 @@ public final class CreateDataSourceDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", knowledgeBaseId=").append(String.valueOf(this.knowledgeBaseId));
         sb.append(", dataSourceConfig=").append(String.valueOf(this.dataSourceConfig));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -397,6 +433,7 @@ public final class CreateDataSourceDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.knowledgeBaseId, other.knowledgeBaseId)
                 && java.util.Objects.equals(this.dataSourceConfig, other.dataSourceConfig)
+                && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -415,6 +452,7 @@ public final class CreateDataSourceDetails
         result =
                 (result * PRIME)
                         + (this.dataSourceConfig == null ? 43 : this.dataSourceConfig.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

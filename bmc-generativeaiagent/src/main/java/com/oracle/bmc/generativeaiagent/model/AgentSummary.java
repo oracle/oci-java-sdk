@@ -28,6 +28,7 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
         "compartmentId",
         "knowledgeBaseIds",
         "welcomeMessage",
+        "llmConfig",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -43,6 +44,7 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
             String compartmentId,
             java.util.List<String> knowledgeBaseIds,
             String welcomeMessage,
+            LlmConfig llmConfig,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             Agent.LifecycleState lifecycleState,
@@ -57,6 +59,7 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
         this.compartmentId = compartmentId;
         this.knowledgeBaseIds = knowledgeBaseIds;
         this.welcomeMessage = welcomeMessage;
+        this.llmConfig = llmConfig;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -138,14 +141,16 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the knowledgeBases associated with agent.
+         * the knowledgeBases associated with agent. This field is deprecated and will be removed
+         * after March 26 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseIds")
         private java.util.List<String> knowledgeBaseIds;
 
         /**
          * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the knowledgeBases associated with agent.
+         * the knowledgeBases associated with agent. This field is deprecated and will be removed
+         * after March 26 2026.
          *
          * @param knowledgeBaseIds the value to set
          * @return this builder
@@ -168,6 +173,15 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
         public Builder welcomeMessage(String welcomeMessage) {
             this.welcomeMessage = welcomeMessage;
             this.__explicitlySet__.add("welcomeMessage");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("llmConfig")
+        private LlmConfig llmConfig;
+
+        public Builder llmConfig(LlmConfig llmConfig) {
+            this.llmConfig = llmConfig;
+            this.__explicitlySet__.add("llmConfig");
             return this;
         }
         /**
@@ -335,6 +349,7 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.compartmentId,
                             this.knowledgeBaseIds,
                             this.welcomeMessage,
+                            this.llmConfig,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -367,6 +382,9 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("welcomeMessage")) {
                 this.welcomeMessage(model.getWelcomeMessage());
+            }
+            if (model.wasPropertyExplicitlySet("llmConfig")) {
+                this.llmConfig(model.getLlmConfig());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -464,14 +482,16 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * knowledgeBases associated with agent.
+     * knowledgeBases associated with agent. This field is deprecated and will be removed after
+     * March 26 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseIds")
     private final java.util.List<String> knowledgeBaseIds;
 
     /**
      * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * knowledgeBases associated with agent.
+     * knowledgeBases associated with agent. This field is deprecated and will be removed after
+     * March 26 2026.
      *
      * @return the value
      */
@@ -490,6 +510,13 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
      */
     public String getWelcomeMessage() {
         return welcomeMessage;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("llmConfig")
+    private final LlmConfig llmConfig;
+
+    public LlmConfig getLlmConfig() {
+        return llmConfig;
     }
 
     /**
@@ -650,6 +677,7 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", knowledgeBaseIds=").append(String.valueOf(this.knowledgeBaseIds));
         sb.append(", welcomeMessage=").append(String.valueOf(this.welcomeMessage));
+        sb.append(", llmConfig=").append(String.valueOf(this.llmConfig));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -677,6 +705,7 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.knowledgeBaseIds, other.knowledgeBaseIds)
                 && java.util.Objects.equals(this.welcomeMessage, other.welcomeMessage)
+                && java.util.Objects.equals(this.llmConfig, other.llmConfig)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -703,6 +732,7 @@ public final class AgentSummary extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.welcomeMessage == null ? 43 : this.welcomeMessage.hashCode());
+        result = (result * PRIME) + (this.llmConfig == null ? 43 : this.llmConfig.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

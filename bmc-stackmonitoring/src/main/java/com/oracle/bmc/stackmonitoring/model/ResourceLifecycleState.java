@@ -10,6 +10,7 @@ public enum ResourceLifecycleState implements com.oracle.bmc.http.internal.BmcEn
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),
+    Inactive("INACTIVE"),
     Deleting("DELETING"),
     Deleted("DELETED"),
     Failed("FAILED"),

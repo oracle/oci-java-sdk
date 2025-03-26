@@ -51,17 +51,17 @@ public final class LogSource extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for
-         * _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+         * Identifier of the log group. Either {@code _Audit} or the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+         * group. Note: For the Notifications target, only {@code _Audit} is allowed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for
-         * _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+         * Identifier of the log group. Either {@code _Audit} or the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+         * group. Note: For the Notifications target, only {@code _Audit} is allowed.
          *
          * @param logGroupId the value to set
          * @return this builder
@@ -144,17 +144,17 @@ public final class LogSource extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
-     * group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit
-     * log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+     * Identifier of the log group. Either {@code _Audit} or the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+     * group. Note: For the Notifications target, only {@code _Audit} is allowed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
-     * group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit
-     * log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+     * Identifier of the log group. Either {@code _Audit} or the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+     * group. Note: For the Notifications target, only {@code _Audit} is allowed.
      *
      * @return the value
      */

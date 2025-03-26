@@ -30,6 +30,7 @@ public class RequestMonitoredResourcesSummarizedCountRequest
         ResourceType("resourceType"),
         License("license"),
         ParentResourceId("parentResourceId"),
+        Namespace("namespace"),
         ;
 
         private final String value;

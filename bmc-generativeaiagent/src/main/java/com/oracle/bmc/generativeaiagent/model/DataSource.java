@@ -36,6 +36,7 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
         "compartmentId",
         "knowledgeBaseId",
         "dataSourceConfig",
+        "metadata",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -51,6 +52,7 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
             String compartmentId,
             String knowledgeBaseId,
             DataSourceConfig dataSourceConfig,
+            java.util.Map<String, String> metadata,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -65,6 +67,7 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
         this.compartmentId = compartmentId;
         this.knowledgeBaseId = knowledgeBaseId;
         this.dataSourceConfig = dataSourceConfig;
+        this.metadata = metadata;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -170,6 +173,21 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
         public Builder dataSourceConfig(DataSourceConfig dataSourceConfig) {
             this.dataSourceConfig = dataSourceConfig;
             this.__explicitlySet__.add("dataSourceConfig");
+            return this;
+        }
+        /** Key-value pairs to allow additional configurations. */
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
+
+        /**
+         * Key-value pairs to allow additional configurations.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         */
+        public Builder metadata(java.util.Map<String, String> metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
@@ -339,6 +357,7 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
                             this.compartmentId,
                             this.knowledgeBaseId,
                             this.dataSourceConfig,
+                            this.metadata,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -371,6 +390,9 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("dataSourceConfig")) {
                 this.dataSourceConfig(model.getDataSourceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -488,6 +510,19 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
 
     public DataSourceConfig getDataSourceConfig() {
         return dataSourceConfig;
+    }
+
+    /** Key-value pairs to allow additional configurations. */
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final java.util.Map<String, String> metadata;
+
+    /**
+     * Key-value pairs to allow additional configurations.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
     }
 
     /**
@@ -699,6 +734,7 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", knowledgeBaseId=").append(String.valueOf(this.knowledgeBaseId));
         sb.append(", dataSourceConfig=").append(String.valueOf(this.dataSourceConfig));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -726,6 +762,7 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.knowledgeBaseId, other.knowledgeBaseId)
                 && java.util.Objects.equals(this.dataSourceConfig, other.dataSourceConfig)
+                && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -752,6 +789,7 @@ public final class DataSource extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.dataSourceConfig == null ? 43 : this.dataSourceConfig.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
