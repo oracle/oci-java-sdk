@@ -226,6 +226,170 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return targetId;
     }
     /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** |
+     * scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+     * scimQuery=(category eq "Users") and (targetId eq "target_1")
+     * scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+     * <p>
+     * Supported fields:
+     * severity
+     * findingKey
+     * reference
+     * targetId
+     * isTopFinding
+     * title
+     * category
+     * remarks
+     * details
+     * summary
+     * isRiskModified
+     *
+     */
+    private String scimQuery;
+
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** |
+     * scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+     * scimQuery=(category eq "Users") and (targetId eq "target_1")
+     * scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+     * <p>
+     * Supported fields:
+     * severity
+     * findingKey
+     * reference
+     * targetId
+     * isTopFinding
+     * title
+     * category
+     * remarks
+     * details
+     * summary
+     * isRiskModified
+     *
+     */
+    public String getScimQuery() {
+        return scimQuery;
+    }
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     */
+    private java.util.List<Field> field;
+
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     **/
+    public enum Field {
+        Severity("severity"),
+        FindingKey("findingKey"),
+        Reference("reference"),
+        TargetId("targetId"),
+        IsTopFinding("isTopFinding"),
+        Title("title"),
+        Category("category"),
+        Remarks("remarks"),
+        Details("details"),
+        Summary("summary"),
+        IsRiskModified("isRiskModified"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Field> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Field v : Field.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Field(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Field create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Field: " + key);
+        }
+    };
+
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     */
+    public java.util.List<Field> getField() {
+        return field;
+    }
+    /**
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+     *
+     **/
+    public enum SortBy {
+        Category("category"),
+        FindingKey("findingKey"),
+        Severity("severity"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+
+    /**
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+     *
+     */
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+    /**
      * Each finding in security assessment has an associated key (think of key as a finding's name).
      * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      *
@@ -428,6 +592,108 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** |
+         * scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+         * scimQuery=(category eq "Users") and (targetId eq "target_1")
+         * scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+         * <p>
+         * Supported fields:
+         * severity
+         * findingKey
+         * reference
+         * targetId
+         * isTopFinding
+         * title
+         * category
+         * remarks
+         * details
+         * summary
+         * isRiskModified
+         *
+         */
+        private String scimQuery = null;
+
+        /**
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** |
+         * scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+         * scimQuery=(category eq "Users") and (targetId eq "target_1")
+         * scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+         * <p>
+         * Supported fields:
+         * severity
+         * findingKey
+         * reference
+         * targetId
+         * isTopFinding
+         * title
+         * category
+         * remarks
+         * details
+         * summary
+         * isRiskModified
+         *
+         * @param scimQuery the value to set
+         * @return this builder instance
+         */
+        public Builder scimQuery(String scimQuery) {
+            this.scimQuery = scimQuery;
+            return this;
+        }
+
+        /**
+         * Specifies a subset of fields to be returned in the response.
+         */
+        private java.util.List<Field> field = null;
+
+        /**
+         * Specifies a subset of fields to be returned in the response.
+         * @param field the value to set
+         * @return this builder instance
+         */
+        public Builder field(java.util.List<Field> field) {
+            this.field = field;
+            return this;
+        }
+
+        /**
+         * Singular setter. Specifies a subset of fields to be returned in the response.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder field(Field singularValue) {
+            return this.field(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+         *
+         */
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+         *
+         * @param sortBy the value to set
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        /**
          * Each finding in security assessment has an associated key (think of key as a finding's name).
          * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          *
@@ -485,6 +751,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());
             targetId(o.getTargetId());
+            scimQuery(o.getScimQuery());
+            field(o.getField());
+            sortBy(o.getSortBy());
             findingKey(o.getFindingKey());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -529,9 +798,12 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             request.targetId = targetId;
+            request.scimQuery = scimQuery;
+            request.field = field;
+            request.sortBy = sortBy;
             request.findingKey = findingKey;
             return request;
-            // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity, lifecycleState, references, limit, page, compartmentIdInSubtree, accessLevel, targetId, findingKey);
+            // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity, lifecycleState, references, limit, page, compartmentIdInSubtree, accessLevel, targetId, scimQuery, field, sortBy, findingKey);
         }
     }
 
@@ -552,6 +824,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .accessLevel(accessLevel)
                 .targetId(targetId)
+                .scimQuery(scimQuery)
+                .field(field)
+                .sortBy(sortBy)
                 .findingKey(findingKey);
     }
 
@@ -579,6 +854,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",scimQuery=").append(String.valueOf(this.scimQuery));
+        sb.append(",field=").append(String.valueOf(this.field));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",findingKey=").append(String.valueOf(this.findingKey));
         sb.append(")");
         return sb.toString();
@@ -607,6 +885,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.accessLevel, other.accessLevel)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.scimQuery, other.scimQuery)
+                && java.util.Objects.equals(this.field, other.field)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.findingKey, other.findingKey);
     }
 
@@ -635,6 +916,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                                 : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.scimQuery == null ? 43 : this.scimQuery.hashCode());
+        result = (result * PRIME) + (this.field == null ? 43 : this.field.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.findingKey == null ? 43 : this.findingKey.hashCode());
         return result;
     }

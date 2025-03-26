@@ -76,7 +76,11 @@ public final class AutonomousContainerDatabaseSummary
         "dbSplitThreshold",
         "vmFailoverReservation",
         "distributionAffinity",
-        "netServicesArchitecture"
+        "netServicesArchitecture",
+        "isMultipleStandby",
+        "isDataGuardEnabled",
+        "dataguard",
+        "dataguardGroupMembers"
     })
     public AutonomousContainerDatabaseSummary(
             String id,
@@ -132,7 +136,11 @@ public final class AutonomousContainerDatabaseSummary
             Integer dbSplitThreshold,
             Integer vmFailoverReservation,
             DistributionAffinity distributionAffinity,
-            NetServicesArchitecture netServicesArchitecture) {
+            NetServicesArchitecture netServicesArchitecture,
+            Boolean isMultipleStandby,
+            Boolean isDataGuardEnabled,
+            AutonomousContainerDatabaseDataguard dataguard,
+            java.util.List<AutonomousContainerDatabaseDataguard> dataguardGroupMembers) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -188,6 +196,10 @@ public final class AutonomousContainerDatabaseSummary
         this.vmFailoverReservation = vmFailoverReservation;
         this.distributionAffinity = distributionAffinity;
         this.netServicesArchitecture = netServicesArchitecture;
+        this.isMultipleStandby = isMultipleStandby;
+        this.isDataGuardEnabled = isDataGuardEnabled;
+        this.dataguard = dataguard;
+        this.dataguardGroupMembers = dataguardGroupMembers;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1065,6 +1077,68 @@ public final class AutonomousContainerDatabaseSummary
             this.__explicitlySet__.add("netServicesArchitecture");
             return this;
         }
+        /**
+         * Whether it is multiple standby Autonomous Dataguard
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMultipleStandby")
+        private Boolean isMultipleStandby;
+
+        /**
+         * Whether it is multiple standby Autonomous Dataguard
+         *
+         * @param isMultipleStandby the value to set
+         * @return this builder
+         **/
+        public Builder isMultipleStandby(Boolean isMultipleStandby) {
+            this.isMultipleStandby = isMultipleStandby;
+            this.__explicitlySet__.add("isMultipleStandby");
+            return this;
+        }
+        /**
+         * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
+        private Boolean isDataGuardEnabled;
+
+        /**
+         * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         *
+         * @param isDataGuardEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDataGuardEnabled(Boolean isDataGuardEnabled) {
+            this.isDataGuardEnabled = isDataGuardEnabled;
+            this.__explicitlySet__.add("isDataGuardEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataguard")
+        private AutonomousContainerDatabaseDataguard dataguard;
+
+        public Builder dataguard(AutonomousContainerDatabaseDataguard dataguard) {
+            this.dataguard = dataguard;
+            this.__explicitlySet__.add("dataguard");
+            return this;
+        }
+        /**
+         * Array of Dg associations.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataguardGroupMembers")
+        private java.util.List<AutonomousContainerDatabaseDataguard> dataguardGroupMembers;
+
+        /**
+         * Array of Dg associations.
+         * @param dataguardGroupMembers the value to set
+         * @return this builder
+         **/
+        public Builder dataguardGroupMembers(
+                java.util.List<AutonomousContainerDatabaseDataguard> dataguardGroupMembers) {
+            this.dataguardGroupMembers = dataguardGroupMembers;
+            this.__explicitlySet__.add("dataguardGroupMembers");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1124,7 +1198,11 @@ public final class AutonomousContainerDatabaseSummary
                             this.dbSplitThreshold,
                             this.vmFailoverReservation,
                             this.distributionAffinity,
-                            this.netServicesArchitecture);
+                            this.netServicesArchitecture,
+                            this.isMultipleStandby,
+                            this.isDataGuardEnabled,
+                            this.dataguard,
+                            this.dataguardGroupMembers);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1294,6 +1372,18 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
                 this.netServicesArchitecture(model.getNetServicesArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("isMultipleStandby")) {
+                this.isMultipleStandby(model.getIsMultipleStandby());
+            }
+            if (model.wasPropertyExplicitlySet("isDataGuardEnabled")) {
+                this.isDataGuardEnabled(model.getIsDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("dataguard")) {
+                this.dataguard(model.getDataguard());
+            }
+            if (model.wasPropertyExplicitlySet("dataguardGroupMembers")) {
+                this.dataguardGroupMembers(model.getDataguardGroupMembers());
             }
             return this;
         }
@@ -2518,6 +2608,59 @@ public final class AutonomousContainerDatabaseSummary
         return netServicesArchitecture;
     }
 
+    /**
+     * Whether it is multiple standby Autonomous Dataguard
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMultipleStandby")
+    private final Boolean isMultipleStandby;
+
+    /**
+     * Whether it is multiple standby Autonomous Dataguard
+     *
+     * @return the value
+     **/
+    public Boolean getIsMultipleStandby() {
+        return isMultipleStandby;
+    }
+
+    /**
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
+    private final Boolean isDataGuardEnabled;
+
+    /**
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     *
+     * @return the value
+     **/
+    public Boolean getIsDataGuardEnabled() {
+        return isDataGuardEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataguard")
+    private final AutonomousContainerDatabaseDataguard dataguard;
+
+    public AutonomousContainerDatabaseDataguard getDataguard() {
+        return dataguard;
+    }
+
+    /**
+     * Array of Dg associations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataguardGroupMembers")
+    private final java.util.List<AutonomousContainerDatabaseDataguard> dataguardGroupMembers;
+
+    /**
+     * Array of Dg associations.
+     * @return the value
+     **/
+    public java.util.List<AutonomousContainerDatabaseDataguard> getDataguardGroupMembers() {
+        return dataguardGroupMembers;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2596,6 +2739,10 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", distributionAffinity=").append(String.valueOf(this.distributionAffinity));
         sb.append(", netServicesArchitecture=")
                 .append(String.valueOf(this.netServicesArchitecture));
+        sb.append(", isMultipleStandby=").append(String.valueOf(this.isMultipleStandby));
+        sb.append(", isDataGuardEnabled=").append(String.valueOf(this.isDataGuardEnabled));
+        sb.append(", dataguard=").append(String.valueOf(this.dataguard));
+        sb.append(", dataguardGroupMembers=").append(String.valueOf(this.dataguardGroupMembers));
         sb.append(")");
         return sb.toString();
     }
@@ -2678,6 +2825,10 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(this.distributionAffinity, other.distributionAffinity)
                 && java.util.Objects.equals(
                         this.netServicesArchitecture, other.netServicesArchitecture)
+                && java.util.Objects.equals(this.isMultipleStandby, other.isMultipleStandby)
+                && java.util.Objects.equals(this.isDataGuardEnabled, other.isDataGuardEnabled)
+                && java.util.Objects.equals(this.dataguard, other.dataguard)
+                && java.util.Objects.equals(this.dataguardGroupMembers, other.dataguardGroupMembers)
                 && super.equals(other);
     }
 
@@ -2848,6 +2999,20 @@ public final class AutonomousContainerDatabaseSummary
                         + (this.netServicesArchitecture == null
                                 ? 43
                                 : this.netServicesArchitecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultipleStandby == null ? 43 : this.isMultipleStandby.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataGuardEnabled == null
+                                ? 43
+                                : this.isDataGuardEnabled.hashCode());
+        result = (result * PRIME) + (this.dataguard == null ? 43 : this.dataguard.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataguardGroupMembers == null
+                                ? 43
+                                : this.dataguardGroupMembers.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

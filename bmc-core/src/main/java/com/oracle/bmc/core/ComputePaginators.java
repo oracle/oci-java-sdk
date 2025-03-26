@@ -1803,6 +1803,487 @@ public class ComputePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeGpuMemoryClusterInstances operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeGpuMemoryClusterInstancesResponse>
+            listComputeGpuMemoryClusterInstancesResponseIterator(
+                    final ListComputeGpuMemoryClusterInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeGpuMemoryClusterInstancesRequest.Builder,
+                ListComputeGpuMemoryClusterInstancesRequest,
+                ListComputeGpuMemoryClusterInstancesResponse>(
+                new java.util.function.Supplier<
+                        ListComputeGpuMemoryClusterInstancesRequest.Builder>() {
+                    @Override
+                    public ListComputeGpuMemoryClusterInstancesRequest.Builder get() {
+                        return ListComputeGpuMemoryClusterInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryClusterInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListComputeGpuMemoryClusterInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGpuMemoryClusterInstancesRequest.Builder>,
+                        ListComputeGpuMemoryClusterInstancesRequest>() {
+                    @Override
+                    public ListComputeGpuMemoryClusterInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGpuMemoryClusterInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryClusterInstancesRequest,
+                        ListComputeGpuMemoryClusterInstancesResponse>() {
+                    @Override
+                    public ListComputeGpuMemoryClusterInstancesResponse apply(
+                            ListComputeGpuMemoryClusterInstancesRequest request) {
+                        return client.listComputeGpuMemoryClusterInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary} objects
+     * contained in responses from the listComputeGpuMemoryClusterInstances operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary>
+            listComputeGpuMemoryClusterInstancesRecordIterator(
+                    final ListComputeGpuMemoryClusterInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeGpuMemoryClusterInstancesRequest.Builder,
+                ListComputeGpuMemoryClusterInstancesRequest,
+                ListComputeGpuMemoryClusterInstancesResponse,
+                com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary>(
+                new java.util.function.Supplier<
+                        ListComputeGpuMemoryClusterInstancesRequest.Builder>() {
+                    @Override
+                    public ListComputeGpuMemoryClusterInstancesRequest.Builder get() {
+                        return ListComputeGpuMemoryClusterInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryClusterInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListComputeGpuMemoryClusterInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGpuMemoryClusterInstancesRequest.Builder>,
+                        ListComputeGpuMemoryClusterInstancesRequest>() {
+                    @Override
+                    public ListComputeGpuMemoryClusterInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGpuMemoryClusterInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryClusterInstancesRequest,
+                        ListComputeGpuMemoryClusterInstancesResponse>() {
+                    @Override
+                    public ListComputeGpuMemoryClusterInstancesResponse apply(
+                            ListComputeGpuMemoryClusterInstancesRequest request) {
+                        return client.listComputeGpuMemoryClusterInstances(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryClusterInstancesResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model
+                                        .ComputeGpuMemoryClusterInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model
+                                            .ComputeGpuMemoryClusterInstanceSummary>
+                            apply(ListComputeGpuMemoryClusterInstancesResponse response) {
+                        return response.getComputeGpuMemoryClusterInstanceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeGpuMemoryClusters operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeGpuMemoryClustersResponse>
+            listComputeGpuMemoryClustersResponseIterator(
+                    final ListComputeGpuMemoryClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeGpuMemoryClustersRequest.Builder, ListComputeGpuMemoryClustersRequest,
+                ListComputeGpuMemoryClustersResponse>(
+                new java.util.function.Supplier<ListComputeGpuMemoryClustersRequest.Builder>() {
+                    @Override
+                    public ListComputeGpuMemoryClustersRequest.Builder get() {
+                        return ListComputeGpuMemoryClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeGpuMemoryClustersResponse, String>() {
+                    @Override
+                    public String apply(ListComputeGpuMemoryClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGpuMemoryClustersRequest.Builder>,
+                        ListComputeGpuMemoryClustersRequest>() {
+                    @Override
+                    public ListComputeGpuMemoryClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGpuMemoryClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryClustersRequest,
+                        ListComputeGpuMemoryClustersResponse>() {
+                    @Override
+                    public ListComputeGpuMemoryClustersResponse apply(
+                            ListComputeGpuMemoryClustersRequest request) {
+                        return client.listComputeGpuMemoryClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary} objects
+     * contained in responses from the listComputeGpuMemoryClusters operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary>
+            listComputeGpuMemoryClustersRecordIterator(
+                    final ListComputeGpuMemoryClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeGpuMemoryClustersRequest.Builder, ListComputeGpuMemoryClustersRequest,
+                ListComputeGpuMemoryClustersResponse,
+                com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary>(
+                new java.util.function.Supplier<ListComputeGpuMemoryClustersRequest.Builder>() {
+                    @Override
+                    public ListComputeGpuMemoryClustersRequest.Builder get() {
+                        return ListComputeGpuMemoryClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeGpuMemoryClustersResponse, String>() {
+                    @Override
+                    public String apply(ListComputeGpuMemoryClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGpuMemoryClustersRequest.Builder>,
+                        ListComputeGpuMemoryClustersRequest>() {
+                    @Override
+                    public ListComputeGpuMemoryClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGpuMemoryClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryClustersRequest,
+                        ListComputeGpuMemoryClustersResponse>() {
+                    @Override
+                    public ListComputeGpuMemoryClustersResponse apply(
+                            ListComputeGpuMemoryClustersRequest request) {
+                        return client.listComputeGpuMemoryClusters(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryClustersResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary>
+                            apply(ListComputeGpuMemoryClustersResponse response) {
+                        return response.getComputeGpuMemoryClusterCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeGpuMemoryFabrics operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeGpuMemoryFabricsResponse>
+            listComputeGpuMemoryFabricsResponseIterator(
+                    final ListComputeGpuMemoryFabricsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeGpuMemoryFabricsRequest.Builder, ListComputeGpuMemoryFabricsRequest,
+                ListComputeGpuMemoryFabricsResponse>(
+                new java.util.function.Supplier<ListComputeGpuMemoryFabricsRequest.Builder>() {
+                    @Override
+                    public ListComputeGpuMemoryFabricsRequest.Builder get() {
+                        return ListComputeGpuMemoryFabricsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeGpuMemoryFabricsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeGpuMemoryFabricsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGpuMemoryFabricsRequest.Builder>,
+                        ListComputeGpuMemoryFabricsRequest>() {
+                    @Override
+                    public ListComputeGpuMemoryFabricsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGpuMemoryFabricsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryFabricsRequest, ListComputeGpuMemoryFabricsResponse>() {
+                    @Override
+                    public ListComputeGpuMemoryFabricsResponse apply(
+                            ListComputeGpuMemoryFabricsRequest request) {
+                        return client.listComputeGpuMemoryFabrics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary} objects
+     * contained in responses from the listComputeGpuMemoryFabrics operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary>
+            listComputeGpuMemoryFabricsRecordIterator(
+                    final ListComputeGpuMemoryFabricsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeGpuMemoryFabricsRequest.Builder, ListComputeGpuMemoryFabricsRequest,
+                ListComputeGpuMemoryFabricsResponse,
+                com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary>(
+                new java.util.function.Supplier<ListComputeGpuMemoryFabricsRequest.Builder>() {
+                    @Override
+                    public ListComputeGpuMemoryFabricsRequest.Builder get() {
+                        return ListComputeGpuMemoryFabricsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeGpuMemoryFabricsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeGpuMemoryFabricsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGpuMemoryFabricsRequest.Builder>,
+                        ListComputeGpuMemoryFabricsRequest>() {
+                    @Override
+                    public ListComputeGpuMemoryFabricsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGpuMemoryFabricsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryFabricsRequest, ListComputeGpuMemoryFabricsResponse>() {
+                    @Override
+                    public ListComputeGpuMemoryFabricsResponse apply(
+                            ListComputeGpuMemoryFabricsRequest request) {
+                        return client.listComputeGpuMemoryFabrics(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeGpuMemoryFabricsResponse,
+                        java.util.List<com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary>
+                            apply(ListComputeGpuMemoryFabricsResponse response) {
+                        return response.getComputeGpuMemoryFabricCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeHosts operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeHostsResponse> listComputeHostsResponseIterator(
+            final ListComputeHostsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeHostsRequest.Builder, ListComputeHostsRequest, ListComputeHostsResponse>(
+                new java.util.function.Supplier<ListComputeHostsRequest.Builder>() {
+                    @Override
+                    public ListComputeHostsRequest.Builder get() {
+                        return ListComputeHostsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeHostsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeHostsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeHostsRequest.Builder>,
+                        ListComputeHostsRequest>() {
+                    @Override
+                    public ListComputeHostsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeHostsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsRequest, ListComputeHostsResponse>() {
+                    @Override
+                    public ListComputeHostsResponse apply(ListComputeHostsRequest request) {
+                        return client.listComputeHosts(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeHostSummary} objects
+     * contained in responses from the listComputeHosts operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeHostSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeHostSummary> listComputeHostsRecordIterator(
+            final ListComputeHostsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeHostsRequest.Builder, ListComputeHostsRequest, ListComputeHostsResponse,
+                com.oracle.bmc.core.model.ComputeHostSummary>(
+                new java.util.function.Supplier<ListComputeHostsRequest.Builder>() {
+                    @Override
+                    public ListComputeHostsRequest.Builder get() {
+                        return ListComputeHostsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeHostsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeHostsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeHostsRequest.Builder>,
+                        ListComputeHostsRequest>() {
+                    @Override
+                    public ListComputeHostsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeHostsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsRequest, ListComputeHostsResponse>() {
+                    @Override
+                    public ListComputeHostsResponse apply(ListComputeHostsRequest request) {
+                        return client.listComputeHosts(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsResponse,
+                        java.util.List<com.oracle.bmc.core.model.ComputeHostSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ComputeHostSummary> apply(
+                            ListComputeHostsResponse response) {
+                        return response.getComputeHostCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listComputeImageCapabilitySchemas operation. This iterable
      * will fetch more data from the server as needed.
      *

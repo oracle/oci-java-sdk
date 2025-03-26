@@ -49,6 +49,14 @@ public class ListConfigurationsConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getConfigType() != null) {
+            target =
+                    target.queryParam(
+                            "configType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getConfigType().getValue()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(

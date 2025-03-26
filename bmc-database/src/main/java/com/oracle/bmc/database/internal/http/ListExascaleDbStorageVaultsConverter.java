@@ -81,6 +81,14 @@ public class ListExascaleDbStorageVaultsConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getClusterPlacementGroupId() != null) {
+            target =
+                    target.queryParam(
+                            "clusterPlacementGroupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getClusterPlacementGroupId()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(

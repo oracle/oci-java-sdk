@@ -42,10 +42,11 @@ package com.oracle.bmc.psql.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BackupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"retentionDays"})
-    protected BackupPolicy(Integer retentionDays) {
+    @java.beans.ConstructorProperties({"retentionDays", "copyPolicy"})
+    protected BackupPolicy(Integer retentionDays, BackupCopyPolicy copyPolicy) {
         super();
         this.retentionDays = retentionDays;
+        this.copyPolicy = copyPolicy;
     }
 
     /**
@@ -60,6 +61,13 @@ public class BackupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      **/
     public Integer getRetentionDays() {
         return retentionDays;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("copyPolicy")
+    private final BackupCopyPolicy copyPolicy;
+
+    public BackupCopyPolicy getCopyPolicy() {
+        return copyPolicy;
     }
 
     @Override
@@ -77,6 +85,7 @@ public class BackupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append("BackupPolicy(");
         sb.append("super=").append(super.toString());
         sb.append("retentionDays=").append(String.valueOf(this.retentionDays));
+        sb.append(", copyPolicy=").append(String.valueOf(this.copyPolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -92,6 +101,7 @@ public class BackupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
         BackupPolicy other = (BackupPolicy) o;
         return java.util.Objects.equals(this.retentionDays, other.retentionDays)
+                && java.util.Objects.equals(this.copyPolicy, other.copyPolicy)
                 && super.equals(other);
     }
 
@@ -102,6 +112,7 @@ public class BackupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result =
                 (result * PRIME)
                         + (this.retentionDays == null ? 43 : this.retentionDays.hashCode());
+        result = (result * PRIME) + (this.copyPolicy == null ? 43 : this.copyPolicy.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

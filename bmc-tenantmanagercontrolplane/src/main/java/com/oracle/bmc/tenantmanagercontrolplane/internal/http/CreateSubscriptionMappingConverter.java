@@ -139,17 +139,6 @@ public class CreateSubscriptionMappingConverter {
                                                     String.class));
                                 }
 
-                                java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
-                                                headers, "opc-work-request-id");
-                                if (opcWorkRequestIdHeader.isPresent()) {
-                                    builder.opcWorkRequestId(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "opc-work-request-id",
-                                                    opcWorkRequestIdHeader.get().get(0),
-                                                    String.class));
-                                }
-
                                 java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "etag");

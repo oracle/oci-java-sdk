@@ -636,6 +636,24 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the sensitive type group to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSensitiveTypeGroupCompartmentResponse>
+            changeSensitiveTypeGroupCompartment(
+                    ChangeSensitiveTypeGroupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSensitiveTypeGroupCompartmentRequest,
+                                    ChangeSensitiveTypeGroupCompartmentResponse>
+                            handler);
+
+    /**
      * Moves the specified sensitive types export into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -1132,6 +1150,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new sensitive type group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSensitiveTypeGroupResponse> createSensitiveTypeGroup(
+            CreateSensitiveTypeGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSensitiveTypeGroupRequest, CreateSensitiveTypeGroupResponse>
+                    handler);
+
+    /**
      * Generates a downloadable file corresponding to the specified list of sensitive types. It's a prerequisite for the
      * DownloadSensitiveTypesExport operation. Use this endpoint to generate a sensitive Types Export file and then use
      * DownloadSensitiveTypesExport to download the generated file.
@@ -1421,6 +1456,22 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the specified masking report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMaskingReportResponse> deleteMaskingReport(
+            DeleteMaskingReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMaskingReportRequest, DeleteMaskingReportResponse>
+                    handler);
+
+    /**
      * Deletes the specified on-premises connector.
      *
      * @param request The request object containing the details to send
@@ -1568,6 +1619,22 @@ public interface DataSafeAsync extends AutoCloseable {
             DeleteSensitiveTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteSensitiveTypeRequest, DeleteSensitiveTypeResponse>
+                    handler);
+
+    /**
+     * Deletes the specified sensitive type group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSensitiveTypeGroupResponse> deleteSensitiveTypeGroup(
+            DeleteSensitiveTypeGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSensitiveTypeGroupRequest, DeleteSensitiveTypeGroupResponse>
                     handler);
 
     /**
@@ -2725,6 +2792,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details of the specified sensitive type group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSensitiveTypeGroupResponse> getSensitiveTypeGroup(
+            GetSensitiveTypeGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSensitiveTypeGroupRequest, GetSensitiveTypeGroupResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified sensitive types export by identifier.
      *
      * @param request The request object containing the details to send
@@ -3473,6 +3557,23 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListGrantsRequest, ListGrantsResponse> handler);
 
     /**
+     * Gets the list of sensitive type Ids present in the specified sensitive type group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListGroupedSensitiveTypesResponse> listGroupedSensitiveTypes(
+            ListGroupedSensitiveTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListGroupedSensitiveTypesRequest, ListGroupedSensitiveTypesResponse>
+                    handler);
+
+    /**
      * Gets a list of library masking formats based on the specified query parameters.
      *
      *
@@ -3540,6 +3641,23 @@ public interface DataSafeAsync extends AutoCloseable {
             ListMaskingColumnsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListMaskingColumnsRequest, ListMaskingColumnsResponse>
+                    handler);
+
+    /**
+     * Gets a list of masking errors in a masking run based on the specified query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingErrorsResponse> listMaskingErrors(
+            ListMaskingErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMaskingErrorsRequest, ListMaskingErrorsResponse>
                     handler);
 
     /**
@@ -4092,6 +4210,33 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets consolidated sensitive columns analytics data based on the specified query parameters.
+     * <p>
+     * When you perform the ListSensitiveColumnAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then \"Not Authorized\" is returned.
+     * <p>
+     * To use ListSensitiveColumnAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveColumnAnalyticsResponse> listSensitiveColumnAnalytics(
+            ListSensitiveColumnAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveColumnAnalyticsRequest,
+                            ListSensitiveColumnAnalyticsResponse>
+                    handler);
+
+    /**
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      *
      *
@@ -4176,6 +4321,23 @@ public interface DataSafeAsync extends AutoCloseable {
             ListSensitiveSchemasRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSensitiveSchemasRequest, ListSensitiveSchemasResponse>
+                    handler);
+
+    /**
+     * Gets a list of sensitive type groups based on the specified query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveTypeGroupsResponse> listSensitiveTypeGroups(
+            ListSensitiveTypeGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>
                     handler);
 
     /**
@@ -4708,6 +4870,24 @@ public interface DataSafeAsync extends AutoCloseable {
             PatchDiscoveryJobResultsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             PatchDiscoveryJobResultsRequest, PatchDiscoveryJobResultsResponse>
+                    handler);
+
+    /**
+     * Patches one or more sensitive types in a sensitive type group. You can use this operation to add or remove
+     * sensitive type ids in a sensitive type group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchGroupedSensitiveTypesResponse> patchGroupedSensitiveTypes(
+            PatchGroupedSensitiveTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchGroupedSensitiveTypesRequest, PatchGroupedSensitiveTypesResponse>
                     handler);
 
     /**
@@ -5565,6 +5745,22 @@ public interface DataSafeAsync extends AutoCloseable {
             UpdateSensitiveTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateSensitiveTypeRequest, UpdateSensitiveTypeResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified sensitive type group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSensitiveTypeGroupResponse> updateSensitiveTypeGroup(
+            UpdateSensitiveTypeGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSensitiveTypeGroupRequest, UpdateSensitiveTypeGroupResponse>
                     handler);
 
     /**

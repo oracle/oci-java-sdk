@@ -458,6 +458,55 @@ public class PostgresqlAsyncClient implements PostgresqlAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BackupCopyResponse> backupCopy(
+            BackupCopyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<BackupCopyRequest, BackupCopyResponse>
+                    handler) {
+        LOG.trace("Called async backupCopy");
+        final BackupCopyRequest interceptedRequest = BackupCopyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BackupCopyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "BackupCopy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/BackupCopy");
+        final java.util.function.Function<javax.ws.rs.core.Response, BackupCopyResponse>
+                transformer =
+                        BackupCopyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BackupCopyRequest, BackupCopyResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BackupCopyRequest, BackupCopyResponse>,
+                        java.util.concurrent.Future<BackupCopyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBackupCopyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BackupCopyRequest, BackupCopyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeBackupCompartmentResponse> changeBackupCompartment(
             ChangeBackupCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

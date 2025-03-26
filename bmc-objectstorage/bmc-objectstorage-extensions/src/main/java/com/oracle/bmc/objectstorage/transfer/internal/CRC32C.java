@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer.internal;
 
+import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.zip.Checksum;
@@ -129,7 +130,9 @@ public final class CRC32C implements Checksum {
                 update(b, 0, length);
             }
         }
-        buffer.position(limit);
+        // cast is necessary to avoid NoSuchMethodError in Java 8
+        // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
+        ((Buffer) buffer).position(limit);
     }
 
     /** Resets CRC-32C to initial value. */

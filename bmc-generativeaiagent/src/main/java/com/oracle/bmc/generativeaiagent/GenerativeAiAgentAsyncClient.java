@@ -941,6 +941,55 @@ public class GenerativeAiAgentAsyncClient implements GenerativeAiAgentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateToolResponse> createTool(
+            CreateToolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateToolRequest, CreateToolResponse>
+                    handler) {
+        LOG.trace("Called async createTool");
+        final CreateToolRequest interceptedRequest = CreateToolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateToolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "CreateTool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/CreateTool");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateToolResponse>
+                transformer =
+                        CreateToolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateToolRequest, CreateToolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateToolRequest, CreateToolResponse>,
+                        java.util.concurrent.Future<CreateToolResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateToolDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateToolRequest, CreateToolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAgentResponse> deleteAgent(
             DeleteAgentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteAgentRequest, DeleteAgentResponse>
@@ -1159,6 +1208,49 @@ public class GenerativeAiAgentAsyncClient implements GenerativeAiAgentAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteKnowledgeBaseRequest, DeleteKnowledgeBaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteToolResponse> deleteTool(
+            DeleteToolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteToolRequest, DeleteToolResponse>
+                    handler) {
+        LOG.trace("Called async deleteTool");
+        final DeleteToolRequest interceptedRequest = DeleteToolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteToolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "DeleteTool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/DeleteTool");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteToolResponse>
+                transformer =
+                        DeleteToolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteToolRequest, DeleteToolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteToolRequest, DeleteToolResponse>,
+                        java.util.concurrent.Future<DeleteToolResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteToolRequest, DeleteToolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1447,6 +1539,46 @@ public class GenerativeAiAgentAsyncClient implements GenerativeAiAgentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetToolResponse> getTool(
+            GetToolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetToolRequest, GetToolResponse> handler) {
+        LOG.trace("Called async getTool");
+        final GetToolRequest interceptedRequest = GetToolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetToolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "GetTool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/GetTool");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetToolResponse> transformer =
+                GetToolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetToolRequest, GetToolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetToolRequest, GetToolResponse>,
+                        java.util.concurrent.Future<GetToolResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetToolRequest, GetToolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1707,6 +1839,48 @@ public class GenerativeAiAgentAsyncClient implements GenerativeAiAgentAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListToolsResponse> listTools(
+            ListToolsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListToolsRequest, ListToolsResponse>
+                    handler) {
+        LOG.trace("Called async listTools");
+        final ListToolsRequest interceptedRequest = ListToolsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListToolsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "ListTools",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/ListTools");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListToolsResponse>
+                transformer =
+                        ListToolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListToolsRequest, ListToolsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListToolsRequest, ListToolsResponse>,
+                        java.util.concurrent.Future<ListToolsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListToolsRequest, ListToolsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2051,6 +2225,54 @@ public class GenerativeAiAgentAsyncClient implements GenerativeAiAgentAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateKnowledgeBaseRequest, UpdateKnowledgeBaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateToolResponse> updateTool(
+            UpdateToolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateToolRequest, UpdateToolResponse>
+                    handler) {
+        LOG.trace("Called async updateTool");
+        final UpdateToolRequest interceptedRequest = UpdateToolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateToolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "UpdateTool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/UpdateTool");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateToolResponse>
+                transformer =
+                        UpdateToolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateToolRequest, UpdateToolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateToolRequest, UpdateToolResponse>,
+                        java.util.concurrent.Future<UpdateToolResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateToolDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateToolRequest, UpdateToolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

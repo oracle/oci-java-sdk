@@ -300,7 +300,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "DataScienceAsyncClient",
-                            "getJobArtifactContent,getModelArtifactContent,getStepArtifactContent"));
+                            "getJobArtifactContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getStepArtifactContent"));
         }
     }
 
@@ -1749,6 +1749,155 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateModelCustomMetadatumArtifactResponse>
+            createModelCustomMetadatumArtifact(
+                    CreateModelCustomMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateModelCustomMetadatumArtifactRequest,
+                                    CreateModelCustomMetadatumArtifactResponse>
+                            handler) {
+        LOG.trace("Called async createModelCustomMetadatumArtifact");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, CreateModelCustomMetadatumArtifactRequest.builder());
+        }
+        final CreateModelCustomMetadatumArtifactRequest interceptedRequest =
+                CreateModelCustomMetadatumArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateModelCustomMetadatumArtifactConverter.fromRequest(client, interceptedRequest);
+
+        ib.property(
+                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateModelCustomMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelCustomMetadatumArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateModelCustomMetadatumArtifactResponse>
+                transformer =
+                        CreateModelCustomMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateModelCustomMetadatumArtifactRequest,
+                        CreateModelCustomMetadatumArtifactResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateModelCustomMetadatumArtifactRequest,
+                                CreateModelCustomMetadatumArtifactResponse>,
+                        java.util.concurrent.Future<CreateModelCustomMetadatumArtifactResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModelCustomMetadatumArtifact(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateModelCustomMetadatumArtifactRequest,
+                    CreateModelCustomMetadatumArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getModelCustomMetadatumArtifact(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelDefinedMetadatumArtifactResponse>
+            createModelDefinedMetadatumArtifact(
+                    CreateModelDefinedMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateModelDefinedMetadatumArtifactRequest,
+                                    CreateModelDefinedMetadatumArtifactResponse>
+                            handler) {
+        LOG.trace("Called async createModelDefinedMetadatumArtifact");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, CreateModelDefinedMetadatumArtifactRequest.builder());
+        }
+        final CreateModelDefinedMetadatumArtifactRequest interceptedRequest =
+                CreateModelDefinedMetadatumArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateModelDefinedMetadatumArtifactConverter.fromRequest(
+                        client, interceptedRequest);
+
+        ib.property(
+                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateModelDefinedMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelDefinedMetadatumArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateModelDefinedMetadatumArtifactResponse>
+                transformer =
+                        CreateModelDefinedMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateModelDefinedMetadatumArtifactRequest,
+                        CreateModelDefinedMetadatumArtifactResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateModelDefinedMetadatumArtifactRequest,
+                                CreateModelDefinedMetadatumArtifactResponse>,
+                        java.util.concurrent.Future<CreateModelDefinedMetadatumArtifactResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModelDefinedMetadatumArtifact(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateModelDefinedMetadatumArtifactRequest,
+                    CreateModelDefinedMetadatumArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getModelDefinedMetadatumArtifact(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelDeploymentResponse> createModelDeployment(
             CreateModelDeploymentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2607,6 +2756,113 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteModelCustomMetadatumArtifactResponse>
+            deleteModelCustomMetadatumArtifact(
+                    DeleteModelCustomMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteModelCustomMetadatumArtifactRequest,
+                                    DeleteModelCustomMetadatumArtifactResponse>
+                            handler) {
+        LOG.trace("Called async deleteModelCustomMetadatumArtifact");
+        final DeleteModelCustomMetadatumArtifactRequest interceptedRequest =
+                DeleteModelCustomMetadatumArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteModelCustomMetadatumArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteModelCustomMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModelCustomMetadatumArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteModelCustomMetadatumArtifactResponse>
+                transformer =
+                        DeleteModelCustomMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteModelCustomMetadatumArtifactRequest,
+                        DeleteModelCustomMetadatumArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteModelCustomMetadatumArtifactRequest,
+                                DeleteModelCustomMetadatumArtifactResponse>,
+                        java.util.concurrent.Future<DeleteModelCustomMetadatumArtifactResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteModelCustomMetadatumArtifactRequest,
+                    DeleteModelCustomMetadatumArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelDefinedMetadatumArtifactResponse>
+            deleteModelDefinedMetadatumArtifact(
+                    DeleteModelDefinedMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteModelDefinedMetadatumArtifactRequest,
+                                    DeleteModelDefinedMetadatumArtifactResponse>
+                            handler) {
+        LOG.trace("Called async deleteModelDefinedMetadatumArtifact");
+        final DeleteModelDefinedMetadatumArtifactRequest interceptedRequest =
+                DeleteModelDefinedMetadatumArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteModelDefinedMetadatumArtifactConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteModelDefinedMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModelDefinedMetadatumArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteModelDefinedMetadatumArtifactResponse>
+                transformer =
+                        DeleteModelDefinedMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteModelDefinedMetadatumArtifactRequest,
+                        DeleteModelDefinedMetadatumArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteModelDefinedMetadatumArtifactRequest,
+                                DeleteModelDefinedMetadatumArtifactResponse>,
+                        java.util.concurrent.Future<DeleteModelDefinedMetadatumArtifactResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteModelDefinedMetadatumArtifactRequest,
+                    DeleteModelDefinedMetadatumArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteModelDeploymentResponse> deleteModelDeployment(
             DeleteModelDeploymentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3249,6 +3505,115 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetModelCustomMetadatumArtifactContentResponse>
+            getModelCustomMetadatumArtifactContent(
+                    GetModelCustomMetadatumArtifactContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetModelCustomMetadatumArtifactContentRequest,
+                                    GetModelCustomMetadatumArtifactContentResponse>
+                            handler) {
+        LOG.trace("Called async getModelCustomMetadatumArtifactContent");
+        final GetModelCustomMetadatumArtifactContentRequest interceptedRequest =
+                GetModelCustomMetadatumArtifactContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelCustomMetadatumArtifactContentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetModelCustomMetadatumArtifactContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelCustomMetadatumArtifactContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetModelCustomMetadatumArtifactContentResponse>
+                transformer =
+                        GetModelCustomMetadatumArtifactContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetModelCustomMetadatumArtifactContentRequest,
+                        GetModelCustomMetadatumArtifactContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModelCustomMetadatumArtifactContentRequest,
+                                GetModelCustomMetadatumArtifactContentResponse>,
+                        java.util.concurrent.Future<GetModelCustomMetadatumArtifactContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModelCustomMetadatumArtifactContentRequest,
+                    GetModelCustomMetadatumArtifactContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelDefinedMetadatumArtifactContentResponse>
+            getModelDefinedMetadatumArtifactContent(
+                    GetModelDefinedMetadatumArtifactContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetModelDefinedMetadatumArtifactContentRequest,
+                                    GetModelDefinedMetadatumArtifactContentResponse>
+                            handler) {
+        LOG.trace("Called async getModelDefinedMetadatumArtifactContent");
+        final GetModelDefinedMetadatumArtifactContentRequest interceptedRequest =
+                GetModelDefinedMetadatumArtifactContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelDefinedMetadatumArtifactContentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetModelDefinedMetadatumArtifactContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelDefinedMetadatumArtifactContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetModelDefinedMetadatumArtifactContentResponse>
+                transformer =
+                        GetModelDefinedMetadatumArtifactContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetModelDefinedMetadatumArtifactContentRequest,
+                        GetModelDefinedMetadatumArtifactContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModelDefinedMetadatumArtifactContentRequest,
+                                GetModelDefinedMetadatumArtifactContentResponse>,
+                        java.util.concurrent.Future<
+                                GetModelDefinedMetadatumArtifactContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModelDefinedMetadatumArtifactContentRequest,
+                    GetModelDefinedMetadatumArtifactContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetModelDeploymentResponse> getModelDeployment(
             GetModelDeploymentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3784,6 +4149,112 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     HeadModelArtifactRequest, HeadModelArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<HeadModelCustomMetadatumArtifactResponse>
+            headModelCustomMetadatumArtifact(
+                    HeadModelCustomMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    HeadModelCustomMetadatumArtifactRequest,
+                                    HeadModelCustomMetadatumArtifactResponse>
+                            handler) {
+        LOG.trace("Called async headModelCustomMetadatumArtifact");
+        final HeadModelCustomMetadatumArtifactRequest interceptedRequest =
+                HeadModelCustomMetadatumArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                HeadModelCustomMetadatumArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "HeadModelCustomMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelCustomMetadatumArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, HeadModelCustomMetadatumArtifactResponse>
+                transformer =
+                        HeadModelCustomMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        HeadModelCustomMetadatumArtifactRequest,
+                        HeadModelCustomMetadatumArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                HeadModelCustomMetadatumArtifactRequest,
+                                HeadModelCustomMetadatumArtifactResponse>,
+                        java.util.concurrent.Future<HeadModelCustomMetadatumArtifactResponse>>
+                futureSupplier = client.headFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    HeadModelCustomMetadatumArtifactRequest,
+                    HeadModelCustomMetadatumArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<HeadModelDefinedMetadatumArtifactResponse>
+            headModelDefinedMetadatumArtifact(
+                    HeadModelDefinedMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    HeadModelDefinedMetadatumArtifactRequest,
+                                    HeadModelDefinedMetadatumArtifactResponse>
+                            handler) {
+        LOG.trace("Called async headModelDefinedMetadatumArtifact");
+        final HeadModelDefinedMetadatumArtifactRequest interceptedRequest =
+                HeadModelDefinedMetadatumArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                HeadModelDefinedMetadatumArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "HeadModelDefinedMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelDefinedMetadatumArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, HeadModelDefinedMetadatumArtifactResponse>
+                transformer =
+                        HeadModelDefinedMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        HeadModelDefinedMetadatumArtifactRequest,
+                        HeadModelDefinedMetadatumArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                HeadModelDefinedMetadatumArtifactRequest,
+                                HeadModelDefinedMetadatumArtifactResponse>,
+                        java.util.concurrent.Future<HeadModelDefinedMetadatumArtifactResponse>>
+                futureSupplier = client.headFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    HeadModelDefinedMetadatumArtifactRequest,
+                    HeadModelDefinedMetadatumArtifactResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4770,6 +5241,64 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RegisterModelArtifactReferenceResponse>
+            registerModelArtifactReference(
+                    RegisterModelArtifactReferenceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RegisterModelArtifactReferenceRequest,
+                                    RegisterModelArtifactReferenceResponse>
+                            handler) {
+        LOG.trace("Called async registerModelArtifactReference");
+        final RegisterModelArtifactReferenceRequest interceptedRequest =
+                RegisterModelArtifactReferenceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RegisterModelArtifactReferenceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "RegisterModelArtifactReference",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/RegisterModelArtifactReferenceDetails/RegisterModelArtifactReference");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RegisterModelArtifactReferenceResponse>
+                transformer =
+                        RegisterModelArtifactReferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RegisterModelArtifactReferenceRequest,
+                        RegisterModelArtifactReferenceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RegisterModelArtifactReferenceRequest,
+                                RegisterModelArtifactReferenceResponse>,
+                        java.util.concurrent.Future<RegisterModelArtifactReferenceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRegisterModelArtifactReferenceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RegisterModelArtifactReferenceRequest, RegisterModelArtifactReferenceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreArchivedModelArtifactResponse>
             restoreArchivedModelArtifact(
                     RestoreArchivedModelArtifactRequest request,
@@ -5018,6 +5547,155 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                     futureSupplier) {
                 @Override
                 protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelCustomMetadatumArtifactResponse>
+            updateModelCustomMetadatumArtifact(
+                    UpdateModelCustomMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateModelCustomMetadatumArtifactRequest,
+                                    UpdateModelCustomMetadatumArtifactResponse>
+                            handler) {
+        LOG.trace("Called async updateModelCustomMetadatumArtifact");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, UpdateModelCustomMetadatumArtifactRequest.builder());
+        }
+        final UpdateModelCustomMetadatumArtifactRequest interceptedRequest =
+                UpdateModelCustomMetadatumArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateModelCustomMetadatumArtifactConverter.fromRequest(client, interceptedRequest);
+
+        ib.property(
+                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateModelCustomMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelCustomMetadatumArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateModelCustomMetadatumArtifactResponse>
+                transformer =
+                        UpdateModelCustomMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateModelCustomMetadatumArtifactRequest,
+                        UpdateModelCustomMetadatumArtifactResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateModelCustomMetadatumArtifactRequest,
+                                UpdateModelCustomMetadatumArtifactResponse>,
+                        java.util.concurrent.Future<UpdateModelCustomMetadatumArtifactResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModelCustomMetadatumArtifact(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateModelCustomMetadatumArtifactRequest,
+                    UpdateModelCustomMetadatumArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getModelCustomMetadatumArtifact(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelDefinedMetadatumArtifactResponse>
+            updateModelDefinedMetadatumArtifact(
+                    UpdateModelDefinedMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateModelDefinedMetadatumArtifactRequest,
+                                    UpdateModelDefinedMetadatumArtifactResponse>
+                            handler) {
+        LOG.trace("Called async updateModelDefinedMetadatumArtifact");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, UpdateModelDefinedMetadatumArtifactRequest.builder());
+        }
+        final UpdateModelDefinedMetadatumArtifactRequest interceptedRequest =
+                UpdateModelDefinedMetadatumArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateModelDefinedMetadatumArtifactConverter.fromRequest(
+                        client, interceptedRequest);
+
+        ib.property(
+                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateModelDefinedMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelDefinedMetadatumArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateModelDefinedMetadatumArtifactResponse>
+                transformer =
+                        UpdateModelDefinedMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateModelDefinedMetadatumArtifactRequest,
+                        UpdateModelDefinedMetadatumArtifactResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateModelDefinedMetadatumArtifactRequest,
+                                UpdateModelDefinedMetadatumArtifactResponse>,
+                        java.util.concurrent.Future<UpdateModelDefinedMetadatumArtifactResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModelDefinedMetadatumArtifact(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateModelDefinedMetadatumArtifactRequest,
+                    UpdateModelDefinedMetadatumArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getModelDefinedMetadatumArtifact(), true);
+                }
             };
         } else {
             return futureSupplier.apply(handlerToUse);

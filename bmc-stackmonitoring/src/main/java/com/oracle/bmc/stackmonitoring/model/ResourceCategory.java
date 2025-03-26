@@ -12,6 +12,7 @@ public enum ResourceCategory {
     Application("APPLICATION"),
     Database("DATABASE"),
     Middleware("MIDDLEWARE"),
+    Infrastructure("INFRASTRUCTURE"),
     Unknown("UNKNOWN"),
 
     /**

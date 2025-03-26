@@ -654,6 +654,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
     public enum ConfigType {
         Default("DEFAULT"),
         Custom("CUSTOM"),
+        Copied("COPIED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

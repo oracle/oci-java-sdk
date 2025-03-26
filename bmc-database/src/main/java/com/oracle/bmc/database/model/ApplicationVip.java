@@ -25,6 +25,7 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
         "compartmentId",
         "subnetId",
         "ipAddress",
+        "ipv6Address",
         "hostnameLabel",
         "lifecycleState",
         "lifecycleDetails",
@@ -38,6 +39,7 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
             String compartmentId,
             String subnetId,
             String ipAddress,
+            String ipv6Address,
             String hostnameLabel,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -50,6 +52,7 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
         this.ipAddress = ipAddress;
+        this.ipv6Address = ipv6Address;
         this.hostnameLabel = hostnameLabel;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -125,19 +128,35 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The application virtual IP (VIP) address.
+         * The application virtual IP (VIP) IPv4 address.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The application virtual IP (VIP) address.
+         * The application virtual IP (VIP) IPv4 address.
          * @param ipAddress the value to set
          * @return this builder
          **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+        /**
+         * The application virtual IP (VIP) IPv6 address.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+        private String ipv6Address;
+
+        /**
+         * The application virtual IP (VIP) IPv6 address.
+         * @param ipv6Address the value to set
+         * @return this builder
+         **/
+        public Builder ipv6Address(String ipv6Address) {
+            this.ipv6Address = ipv6Address;
+            this.__explicitlySet__.add("ipv6Address");
             return this;
         }
         /**
@@ -261,6 +280,7 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
                             this.compartmentId,
                             this.subnetId,
                             this.ipAddress,
+                            this.ipv6Address,
                             this.hostnameLabel,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -289,6 +309,9 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6Address")) {
+                this.ipv6Address(model.getIpv6Address());
             }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
@@ -380,17 +403,31 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      * @return the value
      **/
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+    private final String ipv6Address;
+
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     * @return the value
+     **/
+    public String getIpv6Address() {
+        return ipv6Address;
     }
 
     /**
@@ -559,6 +596,7 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", ipv6Address=").append(String.valueOf(this.ipv6Address));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -584,6 +622,7 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.ipv6Address, other.ipv6Address)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -606,6 +645,7 @@ public final class ApplicationVip extends com.oracle.bmc.http.internal.Explicitl
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.ipv6Address == null ? 43 : this.ipv6Address.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());

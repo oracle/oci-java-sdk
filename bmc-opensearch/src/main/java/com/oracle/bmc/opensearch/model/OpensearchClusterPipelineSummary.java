@@ -26,14 +26,17 @@ public final class OpensearchClusterPipelineSummary
         "id",
         "displayName",
         "compartmentId",
-        "maxOcpuCount",
-        "minOcpuCount",
-        "maxMemoryGB",
-        "minMemoryGB",
+        "vcnId",
+        "subnetId",
+        "ocpuCount",
+        "memoryGB",
+        "nodeCount",
         "pipelineConfigurationBody",
+        "dataPrepperConfigurationBody",
+        "lifecycleState",
+        "pipelineMode",
         "timeCreated",
         "timeUpdated",
-        "lifecycleState",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -42,14 +45,17 @@ public final class OpensearchClusterPipelineSummary
             String id,
             String displayName,
             String compartmentId,
-            Integer maxOcpuCount,
-            Integer minOcpuCount,
-            Integer maxMemoryGB,
-            Integer minMemoryGB,
+            String vcnId,
+            String subnetId,
+            Integer ocpuCount,
+            Integer memoryGB,
+            Integer nodeCount,
             String pipelineConfigurationBody,
+            String dataPrepperConfigurationBody,
+            OpensearchClusterPipeline.LifecycleState lifecycleState,
+            OpensearchClusterPipeline.PipelineMode pipelineMode,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            OpensearchClusterPipeline.LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -57,14 +63,17 @@ public final class OpensearchClusterPipelineSummary
         this.id = id;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
-        this.maxOcpuCount = maxOcpuCount;
-        this.minOcpuCount = minOcpuCount;
-        this.maxMemoryGB = maxMemoryGB;
-        this.minMemoryGB = minMemoryGB;
+        this.vcnId = vcnId;
+        this.subnetId = subnetId;
+        this.ocpuCount = ocpuCount;
+        this.memoryGB = memoryGB;
+        this.nodeCount = nodeCount;
         this.pipelineConfigurationBody = pipelineConfigurationBody;
+        this.dataPrepperConfigurationBody = dataPrepperConfigurationBody;
+        this.lifecycleState = lifecycleState;
+        this.pipelineMode = pipelineMode;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
-        this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -121,67 +130,83 @@ public final class OpensearchClusterPipelineSummary
             return this;
         }
         /**
-         * The maximum pipeline capacity, in OCPUs.
+         * The OCID of the pipeline's VCN.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("maxOcpuCount")
-        private Integer maxOcpuCount;
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
+        private String vcnId;
 
         /**
-         * The maximum pipeline capacity, in OCPUs.
-         * @param maxOcpuCount the value to set
+         * The OCID of the pipeline's VCN.
+         * @param vcnId the value to set
          * @return this builder
          **/
-        public Builder maxOcpuCount(Integer maxOcpuCount) {
-            this.maxOcpuCount = maxOcpuCount;
-            this.__explicitlySet__.add("maxOcpuCount");
+        public Builder vcnId(String vcnId) {
+            this.vcnId = vcnId;
+            this.__explicitlySet__.add("vcnId");
             return this;
         }
         /**
-         * The maximum pipeline capacity, in OCPUs.
+         * The OCID of the pipeline's subnet.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("minOcpuCount")
-        private Integer minOcpuCount;
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
 
         /**
-         * The maximum pipeline capacity, in OCPUs.
-         * @param minOcpuCount the value to set
+         * The OCID of the pipeline's subnet.
+         * @param subnetId the value to set
          * @return this builder
          **/
-        public Builder minOcpuCount(Integer minOcpuCount) {
-            this.minOcpuCount = minOcpuCount;
-            this.__explicitlySet__.add("minOcpuCount");
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The maximum amount of memory in GB, for the pipeline.
+         * The number of OCPUs configured for each pipeline node.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryGB")
-        private Integer maxMemoryGB;
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Integer ocpuCount;
 
         /**
-         * The maximum amount of memory in GB, for the pipeline.
-         * @param maxMemoryGB the value to set
+         * The number of OCPUs configured for each pipeline node.
+         * @param ocpuCount the value to set
          * @return this builder
          **/
-        public Builder maxMemoryGB(Integer maxMemoryGB) {
-            this.maxMemoryGB = maxMemoryGB;
-            this.__explicitlySet__.add("maxMemoryGB");
+        public Builder ocpuCount(Integer ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
             return this;
         }
         /**
-         * The minimum amount of memory in GB, for the pipeline.
+         * The amount of memory in GB, for each pipeline node.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("minMemoryGB")
-        private Integer minMemoryGB;
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
+        private Integer memoryGB;
 
         /**
-         * The minimum amount of memory in GB, for the pipeline.
-         * @param minMemoryGB the value to set
+         * The amount of memory in GB, for each pipeline node.
+         * @param memoryGB the value to set
          * @return this builder
          **/
-        public Builder minMemoryGB(Integer minMemoryGB) {
-            this.minMemoryGB = minMemoryGB;
-            this.__explicitlySet__.add("minMemoryGB");
+        public Builder memoryGB(Integer memoryGB) {
+            this.memoryGB = memoryGB;
+            this.__explicitlySet__.add("memoryGB");
+            return this;
+        }
+        /**
+         * The number of nodes configured for the pipeline.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+        private Integer nodeCount;
+
+        /**
+         * The number of nodes configured for the pipeline.
+         * @param nodeCount the value to set
+         * @return this builder
+         **/
+        public Builder nodeCount(Integer nodeCount) {
+            this.nodeCount = nodeCount;
+            this.__explicitlySet__.add("nodeCount");
             return this;
         }
         /**
@@ -200,6 +225,56 @@ public final class OpensearchClusterPipelineSummary
         public Builder pipelineConfigurationBody(String pipelineConfigurationBody) {
             this.pipelineConfigurationBody = pipelineConfigurationBody;
             this.__explicitlySet__.add("pipelineConfigurationBody");
+            return this;
+        }
+        /**
+         * The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataPrepperConfigurationBody")
+        private String dataPrepperConfigurationBody;
+
+        /**
+         * The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+         *
+         * @param dataPrepperConfigurationBody the value to set
+         * @return this builder
+         **/
+        public Builder dataPrepperConfigurationBody(String dataPrepperConfigurationBody) {
+            this.dataPrepperConfigurationBody = dataPrepperConfigurationBody;
+            this.__explicitlySet__.add("dataPrepperConfigurationBody");
+            return this;
+        }
+        /**
+         * The current state of the cluster pipeline.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private OpensearchClusterPipeline.LifecycleState lifecycleState;
+
+        /**
+         * The current state of the cluster pipeline.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(OpensearchClusterPipeline.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * The current state of the pipeline.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pipelineMode")
+        private OpensearchClusterPipeline.PipelineMode pipelineMode;
+
+        /**
+         * The current state of the pipeline.
+         * @param pipelineMode the value to set
+         * @return this builder
+         **/
+        public Builder pipelineMode(OpensearchClusterPipeline.PipelineMode pipelineMode) {
+            this.pipelineMode = pipelineMode;
+            this.__explicitlySet__.add("pipelineMode");
             return this;
         }
         /**
@@ -232,22 +307,6 @@ public final class OpensearchClusterPipelineSummary
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
-            return this;
-        }
-        /**
-         * The current state of the cluster backup.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private OpensearchClusterPipeline.LifecycleState lifecycleState;
-
-        /**
-         * The current state of the cluster backup.
-         * @param lifecycleState the value to set
-         * @return this builder
-         **/
-        public Builder lifecycleState(OpensearchClusterPipeline.LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
@@ -321,14 +380,17 @@ public final class OpensearchClusterPipelineSummary
                             this.id,
                             this.displayName,
                             this.compartmentId,
-                            this.maxOcpuCount,
-                            this.minOcpuCount,
-                            this.maxMemoryGB,
-                            this.minMemoryGB,
+                            this.vcnId,
+                            this.subnetId,
+                            this.ocpuCount,
+                            this.memoryGB,
+                            this.nodeCount,
                             this.pipelineConfigurationBody,
+                            this.dataPrepperConfigurationBody,
+                            this.lifecycleState,
+                            this.pipelineMode,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.lifecycleState,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -349,29 +411,38 @@ public final class OpensearchClusterPipelineSummary
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
-            if (model.wasPropertyExplicitlySet("maxOcpuCount")) {
-                this.maxOcpuCount(model.getMaxOcpuCount());
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
             }
-            if (model.wasPropertyExplicitlySet("minOcpuCount")) {
-                this.minOcpuCount(model.getMinOcpuCount());
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
-            if (model.wasPropertyExplicitlySet("maxMemoryGB")) {
-                this.maxMemoryGB(model.getMaxMemoryGB());
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
             }
-            if (model.wasPropertyExplicitlySet("minMemoryGB")) {
-                this.minMemoryGB(model.getMinMemoryGB());
+            if (model.wasPropertyExplicitlySet("memoryGB")) {
+                this.memoryGB(model.getMemoryGB());
+            }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
             }
             if (model.wasPropertyExplicitlySet("pipelineConfigurationBody")) {
                 this.pipelineConfigurationBody(model.getPipelineConfigurationBody());
+            }
+            if (model.wasPropertyExplicitlySet("dataPrepperConfigurationBody")) {
+                this.dataPrepperConfigurationBody(model.getDataPrepperConfigurationBody());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("pipelineMode")) {
+                this.pipelineMode(model.getPipelineMode());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
-            }
-            if (model.wasPropertyExplicitlySet("lifecycleState")) {
-                this.lifecycleState(model.getLifecycleState());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -440,59 +511,73 @@ public final class OpensearchClusterPipelineSummary
     }
 
     /**
-     * The maximum pipeline capacity, in OCPUs.
+     * The OCID of the pipeline's VCN.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("maxOcpuCount")
-    private final Integer maxOcpuCount;
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
+    private final String vcnId;
 
     /**
-     * The maximum pipeline capacity, in OCPUs.
+     * The OCID of the pipeline's VCN.
      * @return the value
      **/
-    public Integer getMaxOcpuCount() {
-        return maxOcpuCount;
+    public String getVcnId() {
+        return vcnId;
     }
 
     /**
-     * The maximum pipeline capacity, in OCPUs.
+     * The OCID of the pipeline's subnet.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("minOcpuCount")
-    private final Integer minOcpuCount;
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
 
     /**
-     * The maximum pipeline capacity, in OCPUs.
+     * The OCID of the pipeline's subnet.
      * @return the value
      **/
-    public Integer getMinOcpuCount() {
-        return minOcpuCount;
+    public String getSubnetId() {
+        return subnetId;
     }
 
     /**
-     * The maximum amount of memory in GB, for the pipeline.
+     * The number of OCPUs configured for each pipeline node.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryGB")
-    private final Integer maxMemoryGB;
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    private final Integer ocpuCount;
 
     /**
-     * The maximum amount of memory in GB, for the pipeline.
+     * The number of OCPUs configured for each pipeline node.
      * @return the value
      **/
-    public Integer getMaxMemoryGB() {
-        return maxMemoryGB;
+    public Integer getOcpuCount() {
+        return ocpuCount;
     }
 
     /**
-     * The minimum amount of memory in GB, for the pipeline.
+     * The amount of memory in GB, for each pipeline node.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("minMemoryGB")
-    private final Integer minMemoryGB;
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
+    private final Integer memoryGB;
 
     /**
-     * The minimum amount of memory in GB, for the pipeline.
+     * The amount of memory in GB, for each pipeline node.
      * @return the value
      **/
-    public Integer getMinMemoryGB() {
-        return minMemoryGB;
+    public Integer getMemoryGB() {
+        return memoryGB;
+    }
+
+    /**
+     * The number of nodes configured for the pipeline.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+    private final Integer nodeCount;
+
+    /**
+     * The number of nodes configured for the pipeline.
+     * @return the value
+     **/
+    public Integer getNodeCount() {
+        return nodeCount;
     }
 
     /**
@@ -509,6 +594,50 @@ public final class OpensearchClusterPipelineSummary
      **/
     public String getPipelineConfigurationBody() {
         return pipelineConfigurationBody;
+    }
+
+    /**
+     * The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataPrepperConfigurationBody")
+    private final String dataPrepperConfigurationBody;
+
+    /**
+     * The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+     *
+     * @return the value
+     **/
+    public String getDataPrepperConfigurationBody() {
+        return dataPrepperConfigurationBody;
+    }
+
+    /**
+     * The current state of the cluster pipeline.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final OpensearchClusterPipeline.LifecycleState lifecycleState;
+
+    /**
+     * The current state of the cluster pipeline.
+     * @return the value
+     **/
+    public OpensearchClusterPipeline.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /**
+     * The current state of the pipeline.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pipelineMode")
+    private final OpensearchClusterPipeline.PipelineMode pipelineMode;
+
+    /**
+     * The current state of the pipeline.
+     * @return the value
+     **/
+    public OpensearchClusterPipeline.PipelineMode getPipelineMode() {
+        return pipelineMode;
     }
 
     /**
@@ -537,20 +666,6 @@ public final class OpensearchClusterPipelineSummary
      **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
-    }
-
-    /**
-     * The current state of the cluster backup.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final OpensearchClusterPipeline.LifecycleState lifecycleState;
-
-    /**
-     * The current state of the cluster backup.
-     * @return the value
-     **/
-    public OpensearchClusterPipeline.LifecycleState getLifecycleState() {
-        return lifecycleState;
     }
 
     /**
@@ -624,15 +739,19 @@ public final class OpensearchClusterPipelineSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", maxOcpuCount=").append(String.valueOf(this.maxOcpuCount));
-        sb.append(", minOcpuCount=").append(String.valueOf(this.minOcpuCount));
-        sb.append(", maxMemoryGB=").append(String.valueOf(this.maxMemoryGB));
-        sb.append(", minMemoryGB=").append(String.valueOf(this.minMemoryGB));
+        sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", memoryGB=").append(String.valueOf(this.memoryGB));
+        sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", pipelineConfigurationBody=")
                 .append(String.valueOf(this.pipelineConfigurationBody));
+        sb.append(", dataPrepperConfigurationBody=")
+                .append(String.valueOf(this.dataPrepperConfigurationBody));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", pipelineMode=").append(String.valueOf(this.pipelineMode));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -653,15 +772,19 @@ public final class OpensearchClusterPipelineSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.maxOcpuCount, other.maxOcpuCount)
-                && java.util.Objects.equals(this.minOcpuCount, other.minOcpuCount)
-                && java.util.Objects.equals(this.maxMemoryGB, other.maxMemoryGB)
-                && java.util.Objects.equals(this.minMemoryGB, other.minMemoryGB)
+                && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.memoryGB, other.memoryGB)
+                && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(
                         this.pipelineConfigurationBody, other.pipelineConfigurationBody)
+                && java.util.Objects.equals(
+                        this.dataPrepperConfigurationBody, other.dataPrepperConfigurationBody)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.pipelineMode, other.pipelineMode)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -677,20 +800,27 @@ public final class OpensearchClusterPipelineSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.maxOcpuCount == null ? 43 : this.maxOcpuCount.hashCode());
-        result = (result * PRIME) + (this.minOcpuCount == null ? 43 : this.minOcpuCount.hashCode());
-        result = (result * PRIME) + (this.maxMemoryGB == null ? 43 : this.maxMemoryGB.hashCode());
-        result = (result * PRIME) + (this.minMemoryGB == null ? 43 : this.minMemoryGB.hashCode());
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result = (result * PRIME) + (this.memoryGB == null ? 43 : this.memoryGB.hashCode());
+        result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result =
                 (result * PRIME)
                         + (this.pipelineConfigurationBody == null
                                 ? 43
                                 : this.pipelineConfigurationBody.hashCode());
-        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataPrepperConfigurationBody == null
+                                ? 43
+                                : this.dataPrepperConfigurationBody.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.pipelineMode == null ? 43 : this.pipelineMode.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

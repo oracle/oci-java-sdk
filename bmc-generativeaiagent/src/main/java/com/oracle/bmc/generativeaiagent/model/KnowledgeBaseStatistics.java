@@ -23,7 +23,7 @@ public final class KnowledgeBaseStatistics
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sizeInBytes"})
-    public KnowledgeBaseStatistics(Integer sizeInBytes) {
+    public KnowledgeBaseStatistics(Long sizeInBytes) {
         super();
         this.sizeInBytes = sizeInBytes;
     }
@@ -34,14 +34,14 @@ public final class KnowledgeBaseStatistics
          * Knowledge Base size in bytes.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-        private Integer sizeInBytes;
+        private Long sizeInBytes;
 
         /**
          * Knowledge Base size in bytes.
          * @param sizeInBytes the value to set
          * @return this builder
          **/
-        public Builder sizeInBytes(Integer sizeInBytes) {
+        public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
@@ -82,13 +82,13 @@ public final class KnowledgeBaseStatistics
      * Knowledge Base size in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-    private final Integer sizeInBytes;
+    private final Long sizeInBytes;
 
     /**
      * Knowledge Base size in bytes.
      * @return the value
      **/
-    public Integer getSizeInBytes() {
+    public Long getSizeInBytes() {
         return sizeInBytes;
     }
 

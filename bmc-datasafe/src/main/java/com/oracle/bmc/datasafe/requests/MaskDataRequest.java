@@ -35,6 +35,25 @@ public class MaskDataRequest
         return maskDataDetails;
     }
     /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+    /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
@@ -95,6 +114,29 @@ public class MaskDataRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          */
         private String opcRequestId = null;
@@ -139,6 +181,7 @@ public class MaskDataRequest
         public Builder copy(MaskDataRequest o) {
             maskingPolicyId(o.getMaskingPolicyId());
             maskDataDetails(o.getMaskDataDetails());
+            opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -185,9 +228,10 @@ public class MaskDataRequest
             MaskDataRequest request = new MaskDataRequest();
             request.maskingPolicyId = maskingPolicyId;
             request.maskDataDetails = maskDataDetails;
+            request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new MaskDataRequest(maskingPolicyId, maskDataDetails, opcRequestId);
+            // new MaskDataRequest(maskingPolicyId, maskDataDetails, opcRetryToken, opcRequestId);
         }
     }
 
@@ -199,6 +243,7 @@ public class MaskDataRequest
         return new Builder()
                 .maskingPolicyId(maskingPolicyId)
                 .maskDataDetails(maskDataDetails)
+                .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId);
     }
 
@@ -217,6 +262,7 @@ public class MaskDataRequest
         sb.append("super=").append(super.toString());
         sb.append(",maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
         sb.append(",maskDataDetails=").append(String.valueOf(this.maskDataDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -235,6 +281,7 @@ public class MaskDataRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
                 && java.util.Objects.equals(this.maskDataDetails, other.maskDataDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -248,6 +295,9 @@ public class MaskDataRequest
         result =
                 (result * PRIME)
                         + (this.maskDataDetails == null ? 43 : this.maskDataDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

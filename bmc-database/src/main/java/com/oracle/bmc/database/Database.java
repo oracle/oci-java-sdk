@@ -75,6 +75,22 @@ public interface Database extends AutoCloseable {
             ActivateExadataInfrastructureRequest request);
 
     /**
+     * Create Standby Autonomous Container Database.
+     * For more information about changing Autonomous Container Databases Add Standby, see
+     * [Create Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddStandbyAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStandbyAutonomousContainerDatabase API.
+     */
+    AddStandbyAutonomousContainerDatabaseResponse addStandbyAutonomousContainerDatabase(
+            AddStandbyAutonomousContainerDatabaseRequest request);
+
+    /**
      * Makes the storage capacity from additional storage servers available for Cloud VM Cluster consumption. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
@@ -467,6 +483,20 @@ public interface Database extends AutoCloseable {
             ChangeExadbVmClusterCompartmentRequest request);
 
     /**
+     * Associate a Exadata VM cluster on Exascale Infrastructure with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExadbVmClusterSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExadbVmClusterSubscription API.
+     */
+    ChangeExadbVmClusterSubscriptionResponse changeExadbVmClusterSubscription(
+            ChangeExadbVmClusterSubscriptionRequest request);
+
+    /**
      * Moves a Exadata Database Storage Vault to another compartment.
      *
      * @param request The request object containing the details to send
@@ -479,6 +509,20 @@ public interface Database extends AutoCloseable {
      */
     ChangeExascaleDbStorageVaultCompartmentResponse changeExascaleDbStorageVaultCompartment(
             ChangeExascaleDbStorageVaultCompartmentRequest request);
+
+    /**
+     * Associate a Exadata Database Storage Vault with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExascaleDbStorageVaultSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExascaleDbStorageVaultSubscription API.
+     */
+    ChangeExascaleDbStorageVaultSubscriptionResponse changeExascaleDbStorageVaultSubscription(
+            ChangeExascaleDbStorageVaultSubscriptionRequest request);
 
     /**
      * Move the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails}
@@ -702,6 +746,22 @@ public interface Database extends AutoCloseable {
      */
     ConfirmKeyStoreDetailsAreCorrectResponse confirmKeyStoreDetailsAreCorrect(
             ConfirmKeyStoreDetailsAreCorrectRequest request);
+
+    /**
+     * Convert between and SnapshotStandby Standby Autonomous Container Database .
+     * For more information about changing Autonomous Container Databases Add Standby, see
+     * [Convert Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertStandbyAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertStandbyAutonomousContainerDatabase API.
+     */
+    ConvertStandbyAutonomousContainerDatabaseResponse convertStandbyAutonomousContainerDatabase(
+            ConvertStandbyAutonomousContainerDatabaseRequest request);
 
     /**
      * Converts a non-container database to a pluggable database.
@@ -2004,6 +2064,22 @@ public interface Database extends AutoCloseable {
             DownloadVmClusterNetworkConfigFileRequest request);
 
     /**
+     * Edit Autonomous Container Database Dataguard.
+     * For more information about changing Autonomous Container Databases Add Standby, see
+     * [Update Autonomous Container Database Dataguard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EditAutonomousContainerDatabaseDataguardExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EditAutonomousContainerDatabaseDataguard API.
+     */
+    EditAutonomousContainerDatabaseDataguardResponse editAutonomousContainerDatabaseDataguard(
+            EditAutonomousContainerDatabaseDataguardRequest request);
+
+    /**
      * Enables Database Management for Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -2201,6 +2277,21 @@ public interface Database extends AutoCloseable {
      */
     FailOverAutonomousDatabaseResponse failOverAutonomousDatabase(
             FailOverAutonomousDatabaseRequest request);
+
+    /**
+     * Failover Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverAutonomousContainerDatabaseDataguardExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailoverAutonomousContainerDatabaseDataguard API.
+     */
+    FailoverAutonomousContainerDatabaseDataguardResponse
+            failoverAutonomousContainerDatabaseDataguard(
+                    FailoverAutonomousContainerDatabaseDataguardRequest request);
 
     /**
      * Fails over the standby Autonomous Container Database identified by the autonomousContainerDatabaseId parameter to the primary Autonomous Container Database after the existing primary Autonomous Container Database fails or becomes unreachable.
@@ -4415,6 +4506,21 @@ public interface Database extends AutoCloseable {
             LocalClonePluggableDatabaseRequest request);
 
     /**
+     * Migrate Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MigrateAutonomousContainerDatabaseDataguardAssociation API.
+     */
+    MigrateAutonomousContainerDatabaseDataguardAssociationResponse
+            migrateAutonomousContainerDatabaseDataguardAssociation(
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest request);
+
+    /**
      * Migrates the existing Data Guard association to new Data Guard model to support multiple standby databases functionality.
      * <p>
      * This operation should always be performed on primary.
@@ -4525,6 +4631,21 @@ public interface Database extends AutoCloseable {
      */
     RegisterAutonomousDatabaseDataSafeResponse registerAutonomousDatabaseDataSafe(
             RegisterAutonomousDatabaseDataSafeRequest request);
+
+    /**
+     * Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateAutonomousContainerDatabaseDataguardExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateAutonomousContainerDatabaseDataguard API.
+     */
+    ReinstateAutonomousContainerDatabaseDataguardResponse
+            reinstateAutonomousContainerDatabaseDataguard(
+                    ReinstateAutonomousContainerDatabaseDataguardRequest request);
 
     /**
      * Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
@@ -5004,6 +5125,21 @@ public interface Database extends AutoCloseable {
     SwitchOverDataGuardResponse switchOverDataGuard(SwitchOverDataGuardRequest request);
 
     /**
+     * Switchover Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverAutonomousContainerDatabaseDataguardExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchoverAutonomousContainerDatabaseDataguard API.
+     */
+    SwitchoverAutonomousContainerDatabaseDataguardResponse
+            switchoverAutonomousContainerDatabaseDataguard(
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest request);
+
+    /**
      * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
      * <p>
      * A switchover incurs no data loss.
@@ -5224,6 +5360,18 @@ public interface Database extends AutoCloseable {
      */
     UpdateAutonomousVmClusterResponse updateAutonomousVmCluster(
             UpdateAutonomousVmClusterRequest request);
+
+    /**
+     * Updates database backup details.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackup API.
+     */
+    UpdateBackupResponse updateBackup(UpdateBackupRequest request);
 
     /**
      * If no database is associated with the backup destination:
